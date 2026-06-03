@@ -1,0 +1,756 @@
+{
+  "meta": {
+    "title": "Iniestra Agency — Agencia de Marketing Digital",
+    "description": "Agencia de marketing digital especializada en desarrollo web, redes sociales, diseño gráfico, videomarketing y más."
+  },
+  "nav": {
+    "brand": "Iniestra",
+    "subbrand": "Agency",
+    "cta_secondary": "Hablemos",
+    "cta_primary": "Contáctanos"
+  },
+  "hero": {
+    "tag": "Agencia de Marketing Digital",
+    "title": "TU ESTRATEGIA DIGITAL",
+    "title_highlight": "que convierte",
+    "description": "Diseñamos experiencias digitales que generan resultados reales. Desde desarrollo web hasta campañas de performance — todo bajo un mismo techo.",
+    "cta_primary": "Ver servicios",
+    "cta_secondary": "Hablemos",
+    "badge1": "+300% ROI promedio",
+    "badge2": "500+ Proyectos"
+  },
+  "value": {
+    "tag": "Por qué elegirnos",
+    "title": "Resultados medibles,",
+    "title_highlight": "no promesas",
+    "description": "Combinamos creatividad, tecnología y datos para crear estrategias que realmente funcionan para tu negocio.",
+    "link_text": "Ver todos los servicios",
+    "features": [
+      {
+        "icon": "psychology",
+        "title": "Estrategia Inteligente",
+        "desc": "Cada decisión respaldada por datos reales"
+      },
+      {
+        "icon": "monitoring",
+        "title": "Resultados Medibles",
+        "desc": "KPIs claros desde el primer día"
+      },
+      {
+        "icon": "groups",
+        "title": "Equipo Experto",
+        "desc": "Especialistas en cada área de tu estrategia"
+      }
+    ]
+  },
+  "servicios": {
+    "tag": "Lo que ofrecemos",
+    "title": "ELIGE TU",
+    "title_highlight": "PLAN IDEAL",
+    "description": "Selecciona el servicio y escoge el plan que mejor se adapta a tu negocio",
+    "footer_text": "¿No encuentras lo que buscas?",
+    "footer_link": "Cuéntanos tu caso",
+    "tabs": [
+      {
+        "id": "web",
+        "icon": "code",
+        "label": "Desarrollo Web",
+        "planes": [
+          {
+            "nombre": "Starter",
+            "icon": "rocket_launch",
+            "precio": "490€",
+            "periodo": "/único",
+            "desc": "Landing page profesional para lanzar tu presencia online",
+            "popular": false,
+            "features": [
+              { "text": "1 página landing", "included": true },
+              { "text": "Diseño responsive", "included": true },
+              { "text": "Formulario de contacto", "included": true },
+              { "text": "SEO básico", "included": true },
+              { "text": "CMS / Blog", "included": false }
+            ]
+          },
+          {
+            "nombre": "Básico",
+            "icon": "language",
+            "precio": "990€",
+            "periodo": "/único",
+            "desc": "Web corporativa completa con hasta 5 páginas",
+            "popular": false,
+            "features": [
+              { "text": "Hasta 5 páginas", "included": true },
+              { "text": "Diseño a medida", "included": true },
+              { "text": "Panel de administración", "included": true },
+              { "text": "SEO on-page", "included": true },
+              { "text": "E-commerce", "included": false }
+            ]
+          },
+          {
+            "nombre": "Profesional",
+            "icon": "star",
+            "precio": "2.400€",
+            "periodo": "/único",
+            "desc": "Web avanzada con e-commerce y optimización de conversión",
+            "popular": true,
+            "features": [
+              { "text": "Hasta 20 páginas", "included": true },
+              { "text": "E-commerce integrado", "included": true },
+              { "text": "Velocidad optimizada", "included": true },
+              { "text": "SEO avanzado", "included": true },
+              { "text": "Analíticas avanzadas", "included": true }
+            ]
+          },
+          {
+            "nombre": "Business",
+            "icon": "business",
+            "precio": "4.900€",
+            "periodo": "/único",
+            "desc": "Plataforma web compleja con integraciones y automatizaciones",
+            "popular": false,
+            "features": [
+              { "text": "Páginas ilimitadas", "included": true },
+              { "text": "Integraciones CRM/ERP", "included": true },
+              { "text": "Área privada usuarios", "included": true },
+              { "text": "Multiidioma", "included": true },
+              { "text": "Soporte 6 meses", "included": true }
+            ]
+          },
+          {
+            "nombre": "Enterprise",
+            "icon": "corporate_fare",
+            "precio": "A medida",
+            "periodo": "",
+            "desc": "Solución web 100% personalizada para grandes organizaciones",
+            "popular": false,
+            "features": [
+              { "text": "Arquitectura custom", "included": true },
+              { "text": "SLA garantizado", "included": true },
+              { "text": "Equipo dedicado", "included": true },
+              { "text": "Mantenimiento anual", "included": true },
+              { "text": "Formación incluida", "included": true }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "social",
+        "icon": "thumb_up",
+        "label": "Redes Sociales",
+        "planes": [
+          {
+            "nombre": "Micro",
+            "icon": "smartphone",
+            "precio": "290€",
+            "periodo": "/mes",
+            "desc": "Presencia básica en 1 red social",
+            "popular": false,
+            "features": [
+              { "text": "1 red social", "included": true },
+              { "text": "8 posts/mes", "included": true },
+              { "text": "Diseño de posts", "included": true },
+              { "text": "Stories/Reels", "included": false },
+              { "text": "Reporte mensual", "included": false }
+            ]
+          },
+          {
+            "nombre": "Básico",
+            "icon": "share",
+            "precio": "590€",
+            "periodo": "/mes",
+            "desc": "Gestión activa en 2 redes sociales",
+            "popular": false,
+            "features": [
+              { "text": "2 redes sociales", "included": true },
+              { "text": "16 posts/mes", "included": true },
+              { "text": "4 Stories/semana", "included": true },
+              { "text": "Community mgmt básico", "included": true },
+              { "text": "Reels / TikToks", "included": false }
+            ]
+          },
+          {
+            "nombre": "Growth",
+            "icon": "trending_up",
+            "precio": "990€",
+            "periodo": "/mes",
+            "desc": "Estrategia completa para crecer en 3 plataformas",
+            "popular": true,
+            "features": [
+              { "text": "3 redes sociales", "included": true },
+              { "text": "24 posts/mes", "included": true },
+              { "text": "Reels & Stories", "included": true },
+              { "text": "Community mgmt completo", "included": true },
+              { "text": "Reporte mensual", "included": true }
+            ]
+          },
+          {
+            "nombre": "Pro",
+            "icon": "bar_chart",
+            "precio": "1.690€",
+            "periodo": "/mes",
+            "desc": "Gestión 360° con estrategia publicitaria incluida",
+            "popular": false,
+            "features": [
+              { "text": "Todas las redes", "included": true },
+              { "text": "40 posts/mes", "included": true },
+              { "text": "Campañas de pago", "included": true },
+              { "text": "Analítica avanzada", "included": true },
+              { "text": "Gestor dedicado", "included": true }
+            ]
+          },
+          {
+            "nombre": "Enterprise",
+            "icon": "corporate_fare",
+            "precio": "A medida",
+            "periodo": "",
+            "desc": "Para marcas con altos volúmenes y múltiples mercados",
+            "popular": false,
+            "features": [
+              { "text": "Equipo dedicado", "included": true },
+              { "text": "Multiidioma", "included": true },
+              { "text": "Estrategia global", "included": true },
+              { "text": "Influencer mgmt", "included": true },
+              { "text": "Dashboard en tiempo real", "included": true }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "design",
+        "icon": "draw",
+        "label": "Diseño Gráfico",
+        "planes": [
+          {
+            "nombre": "Logo",
+            "icon": "palette",
+            "precio": "290€",
+            "periodo": "/único",
+            "desc": "Logotipo profesional con variantes de uso",
+            "popular": false,
+            "features": [
+              { "text": "3 propuestas iniciales", "included": true },
+              { "text": "2 rondas de revisión", "included": true },
+              { "text": "Archivos vectoriales", "included": true },
+              { "text": "Manual de marca", "included": false },
+              { "text": "Papelería", "included": false }
+            ]
+          },
+          {
+            "nombre": "Identidad",
+            "icon": "style",
+            "precio": "790€",
+            "periodo": "/único",
+            "desc": "Identidad visual completa para tu marca",
+            "popular": false,
+            "features": [
+              { "text": "Logo + variantes", "included": true },
+              { "text": "Paleta de colores", "included": true },
+              { "text": "Tipografías corporativas", "included": true },
+              { "text": "Manual básico de marca", "included": true },
+              { "text": "Papelería completa", "included": false }
+            ]
+          },
+          {
+            "nombre": "Branding Pro",
+            "icon": "auto_awesome",
+            "precio": "1.490€",
+            "periodo": "/único",
+            "desc": "Branding completo con papelería y materiales digitales",
+            "popular": true,
+            "features": [
+              { "text": "Identidad completa", "included": true },
+              { "text": "Manual de marca 30p", "included": true },
+              { "text": "Papelería corporativa", "included": true },
+              { "text": "Kit redes sociales", "included": true },
+              { "text": "Iconografía personalizada", "included": true }
+            ]
+          },
+          {
+            "nombre": "Editorial",
+            "icon": "edit_note",
+            "precio": "490€",
+            "periodo": "/mes",
+            "desc": "Diseño mensual de materiales gráficos recurrentes",
+            "popular": false,
+            "features": [
+              { "text": "20 piezas/mes", "included": true },
+              { "text": "Banners y publicidad", "included": true },
+              { "text": "Infografías", "included": true },
+              { "text": "Presentaciones", "included": true },
+              { "text": "Entrega en 48h", "included": true }
+            ]
+          },
+          {
+            "nombre": "Enterprise",
+            "icon": "corporate_fare",
+            "precio": "A medida",
+            "periodo": "",
+            "desc": "Departamento de diseño externo para grandes empresas",
+            "popular": false,
+            "features": [
+              { "text": "Diseñadores dedicados", "included": true },
+              { "text": "Piezas ilimitadas", "included": true },
+              { "text": "Entrega urgente", "included": true },
+              { "text": "Sistema de diseño", "included": true },
+              { "text": "Acceso directo al equipo", "included": true }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "video",
+        "icon": "videocam",
+        "label": "Videomarketing",
+        "planes": [
+          {
+            "nombre": "Reel",
+            "icon": "smartphone",
+            "precio": "190€",
+            "periodo": "/vídeo",
+            "desc": "Vídeo corto para redes sociales (Reels, TikTok, Shorts)",
+            "popular": false,
+            "features": [
+              { "text": "Hasta 60 segundos", "included": true },
+              { "text": "Edición + música", "included": true },
+              { "text": "Subtítulos animados", "included": true },
+              { "text": "Rodaje propio", "included": false },
+              { "text": "Voz en off", "included": false }
+            ]
+          },
+          {
+            "nombre": "Básico",
+            "icon": "videocam",
+            "precio": "590€",
+            "periodo": "/vídeo",
+            "desc": "Vídeo corporativo profesional de hasta 2 minutos",
+            "popular": false,
+            "features": [
+              { "text": "Hasta 2 minutos", "included": true },
+              { "text": "Guión incluido", "included": true },
+              { "text": "Post-producción completa", "included": true },
+              { "text": "Música licenciada", "included": true },
+              { "text": "Rodaje en location", "included": false }
+            ]
+          },
+          {
+            "nombre": "Producción",
+            "icon": "movie",
+            "precio": "1.490€",
+            "periodo": "/vídeo",
+            "desc": "Producción completa con rodaje y dirección creativa",
+            "popular": true,
+            "features": [
+              { "text": "Rodaje en location", "included": true },
+              { "text": "Dirección creativa", "included": true },
+              { "text": "Voz en off profesional", "included": true },
+              { "text": "Motion graphics", "included": true },
+              { "text": "3 formatos de entrega", "included": true }
+            ]
+          },
+          {
+            "nombre": "Pack Mensual",
+            "icon": "subscriptions",
+            "precio": "990€",
+            "periodo": "/mes",
+            "desc": "Producción continua de contenido en vídeo",
+            "popular": false,
+            "features": [
+              { "text": "4 vídeos/mes", "included": true },
+              { "text": "Reels + largo formato", "included": true },
+              { "text": "Calendario editorial", "included": true },
+              { "text": "Publicación incluida", "included": true },
+              { "text": "Reporte de resultados", "included": true }
+            ]
+          },
+          {
+            "nombre": "Campaña",
+            "icon": "live_tv",
+            "precio": "A medida",
+            "periodo": "",
+            "desc": "Campaña audiovisual completa para lanzamientos o eventos",
+            "popular": false,
+            "features": [
+              { "text": "Spot publicitario", "included": true },
+              { "text": "Adaptaciones múltiples", "included": true },
+              { "text": "Distribución en medios", "included": true },
+              { "text": "Estrategia de paid", "included": true },
+              { "text": "Medición de resultados", "included": true }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ads",
+        "icon": "ads_click",
+        "label": "Google & Meta",
+        "planes": [
+          {
+            "nombre": "Arranque",
+            "icon": "search",
+            "precio": "390€",
+            "periodo": "/mes",
+            "desc": "Primera campaña en Google Ads para negocios que empiezan",
+            "popular": false,
+            "features": [
+              { "text": "1 campaña Google", "included": true },
+              { "text": "Configuración inicial", "included": true },
+              { "text": "Informe mensual", "included": true },
+              { "text": "Meta Ads", "included": false },
+              { "text": "Remarketing", "included": false }
+            ]
+          },
+          {
+            "nombre": "Básico",
+            "icon": "ads_click",
+            "precio": "690€",
+            "periodo": "/mes",
+            "desc": "Google + Meta con optimización continua",
+            "popular": false,
+            "features": [
+              { "text": "Google Search + Display", "included": true },
+              { "text": "Meta Ads básico", "included": true },
+              { "text": "Remarketing", "included": true },
+              { "text": "Optimización semanal", "included": true },
+              { "text": "Creatividades incluidas", "included": false }
+            ]
+          },
+          {
+            "nombre": "Performance",
+            "icon": "bar_chart",
+            "precio": "1.290€",
+            "periodo": "/mes",
+            "desc": "Estrategia multicanal con creatividades y optimización diaria",
+            "popular": true,
+            "features": [
+              { "text": "Google + Meta completo", "included": true },
+              { "text": "Creatividades incluidas", "included": true },
+              { "text": "A/B testing continuo", "included": true },
+              { "text": "Dashboard en tiempo real", "included": true },
+              { "text": "Gestor dedicado", "included": true }
+            ]
+          },
+          {
+            "nombre": "Scale",
+            "icon": "rocket_launch",
+            "precio": "2.490€",
+            "periodo": "/mes",
+            "desc": "Para e-commerce y empresas con alto presupuesto publicitario",
+            "popular": false,
+            "features": [
+              { "text": "Todos los canales", "included": true },
+              { "text": "Performance Max", "included": true },
+              { "text": "Shopping Ads", "included": true },
+              { "text": "Atribución multicanal", "included": true },
+              { "text": "CRO incluido", "included": true }
+            ]
+          },
+          {
+            "nombre": "Enterprise",
+            "icon": "corporate_fare",
+            "precio": "A medida",
+            "periodo": "",
+            "desc": "Gestión de grandes presupuestos publicitarios",
+            "popular": false,
+            "features": [
+              { "text": "Equipo especializado", "included": true },
+              { "text": "Presupuesto +10K€/mes", "included": true },
+              { "text": "Estrategia omnicanal", "included": true },
+              { "text": "Reunión semanal", "included": true },
+              { "text": "ROI garantizado", "included": true }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ia",
+        "icon": "smart_toy",
+        "label": "Agentes IA",
+        "planes": [
+          {
+            "nombre": "Chatbot",
+            "icon": "chat",
+            "precio": "490€",
+            "periodo": "/único",
+            "desc": "Chatbot IA básico para atención al cliente 24/7",
+            "popular": false,
+            "features": [
+              { "text": "Chatbot web", "included": true },
+              { "text": "FAQs automatizadas", "included": true },
+              { "text": "Integración web", "included": true },
+              { "text": "Integración CRM", "included": false },
+              { "text": "Flujos avanzados", "included": false }
+            ]
+          },
+          {
+            "nombre": "Automatización",
+            "icon": "settings_suggest",
+            "precio": "990€",
+            "periodo": "/único",
+            "desc": "Agente IA con flujos automatizados e integración CRM",
+            "popular": false,
+            "features": [
+              { "text": "Agente multicanal", "included": true },
+              { "text": "Integración CRM", "included": true },
+              { "text": "Flujos condicionales", "included": true },
+              { "text": "Emails automáticos", "included": true },
+              { "text": "IA generativa custom", "included": false }
+            ]
+          },
+          {
+            "nombre": "Agente Pro",
+            "icon": "smart_toy",
+            "precio": "2.490€",
+            "periodo": "/único",
+            "desc": "Agente IA generativa entrenada con tu negocio",
+            "popular": true,
+            "features": [
+              { "text": "IA entrenada custom", "included": true },
+              { "text": "Multicanal (web+WA+email)", "included": true },
+              { "text": "Integraciones ilimitadas", "included": true },
+              { "text": "Panel de control", "included": true },
+              { "text": "Soporte 3 meses", "included": true }
+            ]
+          },
+          {
+            "nombre": "Ecosistema",
+            "icon": "api",
+            "precio": "4.990€",
+            "periodo": "/único",
+            "desc": "Suite de agentes IA integrados en todos tus procesos",
+            "popular": false,
+            "features": [
+              { "text": "Múltiples agentes IA", "included": true },
+              { "text": "Ventas + soporte + RRHH", "included": true },
+              { "text": "ERP / API custom", "included": true },
+              { "text": "Analítica de conversaciones", "included": true },
+              { "text": "Soporte 6 meses", "included": true }
+            ]
+          },
+          {
+            "nombre": "Enterprise",
+            "icon": "corporate_fare",
+            "precio": "A medida",
+            "periodo": "",
+            "desc": "Transformación digital completa con IA para grandes empresas",
+            "popular": false,
+            "features": [
+              { "text": "Consultoría IA estratégica", "included": true },
+              { "text": "Modelos LLM privados", "included": true },
+              { "text": "Integración sistemas legacy", "included": true },
+              { "text": "Formación del equipo", "included": true },
+              { "text": "SLA y mantenimiento", "included": true }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "content",
+        "icon": "article",
+        "label": "Contenido",
+        "planes": [
+          {
+            "nombre": "Básico",
+            "icon": "edit_note",
+            "precio": "290€",
+            "periodo": "/mes",
+            "desc": "Contenido esencial para mantener activa tu presencia",
+            "popular": false,
+            "features": [
+              { "text": "4 artículos de blog/mes", "included": true },
+              { "text": "SEO on-page", "included": true },
+              { "text": "Copywriting web básico", "included": true },
+              { "text": "Newsletter", "included": false },
+              { "text": "Contenido para RRSS", "included": false }
+            ]
+          },
+          {
+            "nombre": "Estándar",
+            "icon": "newspaper",
+            "precio": "590€",
+            "periodo": "/mes",
+            "desc": "Estrategia de contenido completa para posicionar tu marca",
+            "popular": false,
+            "features": [
+              { "text": "8 artículos SEO/mes", "included": true },
+              { "text": "Newsletter mensual", "included": true },
+              { "text": "Copywriting para RRSS", "included": true },
+              { "text": "Estrategia de keywords", "included": true },
+              { "text": "Fotografía de producto", "included": false }
+            ]
+          },
+          {
+            "nombre": "Growth",
+            "icon": "trending_up",
+            "precio": "990€",
+            "periodo": "/mes",
+            "desc": "Contenido premium que posiciona y convierte",
+            "popular": true,
+            "features": [
+              { "text": "12 artículos SEO/mes", "included": true },
+              { "text": "Newsletter semanal", "included": true },
+              { "text": "Contenido RRSS completo", "included": true },
+              { "text": "Email marketing", "included": true },
+              { "text": "Fotografía de producto", "included": true }
+            ]
+          },
+          {
+            "nombre": "Editorial",
+            "icon": "auto_stories",
+            "precio": "1.590€",
+            "periodo": "/mes",
+            "desc": "Producción editorial de alto volumen y calidad",
+            "popular": false,
+            "features": [
+              { "text": "20+ piezas de contenido", "included": true },
+              { "text": "Vídeos cortos incluidos", "included": true },
+              { "text": "Infografías y ebooks", "included": true },
+              { "text": "Podcast/guiones", "included": true },
+              { "text": "Gestor de contenido", "included": true }
+            ]
+          },
+          {
+            "nombre": "Enterprise",
+            "icon": "corporate_fare",
+            "precio": "A medida",
+            "periodo": "",
+            "desc": "Redacción editorial completa para marcas líderes",
+            "popular": false,
+            "features": [
+              { "text": "Equipo editorial dedicado", "included": true },
+              { "text": "Multiidioma", "included": true },
+              { "text": "Estrategia de contenidos", "included": true },
+              { "text": "Distribución en medios", "included": true },
+              { "text": "Analítica de contenido", "included": true }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "porque": {
+    "tag": "Por qué Iniestra",
+    "title": "No somos una agencia",
+    "title_highlight": "más",
+    "description": "En un mercado lleno de promesas vacías, nosotros entregamos resultados demostrables respaldados por datos, experiencia y un equipo apasionado.",
+    "founder_name": "Miguel Iniestra",
+    "founder_role": "Fundador & CEO — 10+ años de experiencia",
+    "features": [
+      { "icon": "verified", "title": "Experiencia Comprobada", "desc": "Más de 500 proyectos entregados con éxito" },
+      { "icon": "timer", "title": "Resultados en 90 Días", "desc": "Primeros resultados visibles en el primer trimestre" },
+      { "icon": "groups", "title": "Equipo Profesional", "desc": "Especialistas en cada área, sin generalistas" },
+      { "icon": "thumb_up", "title": "Satisfacción 100%", "desc": "98% de clientes renuevan con nosotros" }
+    ]
+  },
+  "stats": [
+    { "target": 500, "suffix": "+", "label": "Proyectos completados" },
+    { "target": 98, "suffix": "%", "label": "Tasa de retención" },
+    { "target": 15, "suffix": "", "label": "Países atendidos" },
+    { "target": 10, "suffix": "M+", "label": "En ingresos generados" }
+  ],
+  "portafolio": {
+    "tag": "Portafolio",
+    "title": "IDEAS QUE SE CONVIERTEN",
+    "title_highlight": "en resultados",
+    "items": [
+      { "categoria": "Videomarketing", "titulo": "Campaña viral de marca", "color1": "#1a1a2e", "color2": "#16213e", "icon": "videocam" },
+      { "categoria": "Diseño de marca", "titulo": "Identidad visual premium", "color1": "#1a0a00", "color2": "#2d1000", "icon": "brand_awareness" },
+      { "categoria": "Redes Sociales", "titulo": "Campaña social +300% alcance", "color1": "#0a1a0a", "color2": "#102010", "icon": "thumb_up" },
+      { "categoria": "Desarrollo Web", "titulo": "E-commerce de alto rendimiento", "color1": "#0d0d1a", "color2": "#1a1a35", "icon": "code" },
+      { "categoria": "Identidad Visual", "titulo": "Rebranding completo", "color1": "#1a0d0d", "color2": "#2e1515", "icon": "style" },
+      { "categoria": "Fotografía", "titulo": "Fotografía de producto premium", "color1": "#0d1a15", "color2": "#102818", "icon": "photo_camera" }
+    ]
+  },
+  "testimonios": {
+    "tag": "Testimonios",
+    "title": "ELLOS NOS",
+    "title_highlight": "respaldan",
+    "items": [
+      {
+        "texto": "Iniestra transformó completamente nuestra presencia digital. En 3 meses triplicamos nuestras ventas online y la web es espectacular.",
+        "nombre": "Carlos Amador",
+        "rol": "CEO, TechRetail",
+        "iniciales": "CA"
+      },
+      {
+        "texto": "El equipo de Iniestra entiende realmente lo que necesitas. Las campañas de Google Ads nos generan un ROI constante del 280%.",
+        "nombre": "María López",
+        "rol": "Directora de Marketing, ModaFit",
+        "iniciales": "ML"
+      },
+      {
+        "texto": "Probamos varias agencias y ninguna como Iniestra. Profesionales, creativos y con resultados tangibles desde el primer mes.",
+        "nombre": "Javier Prada",
+        "rol": "Fundador, Agro Digital",
+        "iniciales": "JP"
+      }
+    ]
+  },
+  "nosotros": {
+    "tag": "Quiénes somos",
+    "title": "Una agencia con",
+    "title_highlight": "propósito",
+    "descripcion1": "Somos un equipo multidisciplinar con sede en Madrid, apasionado por crear experiencias digitales que generan impacto real. Fundada en 2014, hemos crecido de la mano de más de 500 clientes en 15 países.",
+    "descripcion2": "Nuestra misión es democratizar el marketing digital de alta calidad para empresas que quieren crecer de verdad.",
+    "fundacion": "2014",
+    "paises": "15+",
+    "clientes": "500+",
+    "equipo": [
+      { "nombre": "Miguel Iniestra", "rol": "CEO & Estrategia", "iniciales": "MI" },
+      { "nombre": "Laura Sánchez", "rol": "Directora Creativa", "iniciales": "LS" },
+      { "nombre": "Carlos Ruiz", "rol": "Head of Dev", "iniciales": "CR" },
+      { "nombre": "Ana Torres", "rol": "Performance Manager", "iniciales": "AT" }
+    ]
+  },
+  "faq": {
+    "tag": "FAQ",
+    "title": "PREGUNTAS",
+    "title_highlight": "frecuentes",
+    "items": [
+      { "pregunta": "¿Cuánto cuesta trabajar con Iniestra?", "respuesta": "Cada proyecto es único. Ofrecemos presupuestos a medida según el alcance, objetivos y urgencia. Contáctanos para una valoración gratuita sin compromiso. Trabajamos desde proyectos puntuales hasta retainers mensuales." },
+      { "pregunta": "¿Cuánto tarda en ejecutarse un proyecto?", "respuesta": "Depende del tipo de proyecto. Una landing page puede estar lista en 1-2 semanas; un e-commerce completo puede tomar 4-8 semanas. Siempre establecemos un calendario claro desde el inicio." },
+      { "pregunta": "¿Trabajáis con empresas de cualquier tamaño?", "respuesta": "Sí. Hemos trabajado con startups en fase inicial y con multinacionales. Lo que importa es que tengas ganas de crecer y un proyecto serio. Adaptamos nuestros servicios a tu realidad." },
+      { "pregunta": "¿Qué incluye el servicio de Desarrollo Web?", "respuesta": "Diseño UX/UI, desarrollo front y back, integración de CMS, optimización de velocidad, SEO técnico, versión mobile, y soporte post-lanzamiento. Todo en un solo servicio." },
+      { "pregunta": "¿Puedo ver ejemplos de trabajos anteriores?", "respuesta": "Sí, en la sección de portafolio puedes ver una selección de nuestros proyectos. También podemos enviarte casos de éxito más detallados según tu sector." },
+      { "pregunta": "¿Ofrecéis mantenimiento después del proyecto?", "respuesta": "Sí. Disponemos de planes de mantenimiento mensual que incluyen actualizaciones, soporte técnico, monitoreo de rendimiento y pequeños cambios. No te dejamos solo después de la entrega." },
+      { "pregunta": "¿Trabajáis en remoto o presencial?", "respuesta": "Trabajamos principalmente en remoto, lo que nos permite atender clientes de todo el mundo. Tenemos oficina en Madrid para reuniones presenciales si lo prefieres." },
+      { "pregunta": "¿Cómo es el proceso de trabajo?", "respuesta": "1) Reunión de briefing gratuita → 2) Propuesta y presupuesto → 3) Kickoff y planificación → 4) Ejecución con revisiones periódicas → 5) Entrega y formación → 6) Soporte post-lanzamiento." }
+    ]
+  },
+  "contacto": {
+    "tag": "Contacto",
+    "title": "HABLEMOS DE TU",
+    "title_highlight": "proyecto",
+    "subtitulo": "Primera consulta siempre gratuita",
+    "telefono": "+34 639 494 000",
+    "email": "hola@iniestra.agency",
+    "ubicacion": "Madrid, España",
+    "horario": "Lun–Vie, 9:00–18:00",
+    "badge_title": "Respuesta en 24h",
+    "badge_desc": "Respondemos a todos los mensajes en menos de 24 horas laborables, garantizado.",
+    "servicios_form": ["Desarrollo Web", "Redes Sociales", "Diseño Gráfico", "Videomarketing", "Campañas Google & Meta", "Agentes IA", "Contenido & Post", "Varios servicios"]
+  },
+  "cta": {
+    "tag": "¿Listo para crecer?",
+    "title": "Hablemos de tu próximo",
+    "title_highlight": "gran proyecto",
+    "description": "No pierdas más tiempo. Agenda una consultoría gratuita y descubre cómo podemos transformar tu presencia digital.",
+    "cta_primary": "Agendar consultoría gratuita",
+    "cta_secondary": "Ver servicios"
+  },
+  "footer": {
+    "tagline": "Agencia de marketing digital especializada en resultados. Transformamos ideas en crecimiento real.",
+    "copyright": "© 2025 Iniestra Agency. Todos los derechos reservados."
+  },
+  "privacidad": {
+    "tag": "Legal",
+    "title": "Política de",
+    "title_highlight": "Privacidad",
+    "fecha": "1 de enero de 2025"
+  },
+  "terminos": {
+    "tag": "Legal",
+    "title": "Términos",
+    "title_highlight": "de Uso",
+    "fecha": "1 de enero de 2025"
+  }
+}

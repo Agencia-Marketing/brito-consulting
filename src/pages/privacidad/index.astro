@@ -1,0 +1,49 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import site from '../../content/site.json';
+const p = site.privacidad;
+---
+<Layout title={`${p.title} ${p.title_highlight} — Iniestra Agency`}>
+<main style="padding-top:8rem;padding-bottom:6rem;max-width:48rem;margin:0 auto;padding-left:1.5rem;padding-right:1.5rem">
+  <span class="label-tag tag-orange" style="margin-bottom:1rem">{p.tag}</span>
+  <h1 class="headline-lg" style="margin-top:1rem">{p.title} <span class="highlight-text">{p.title_highlight}</span></h1>
+  <p style="color:var(--gray-500);font-size:.85rem;margin-top:.5rem;margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid var(--border)">Última actualización: {p.fecha}</p>
+
+  <h2 style="font-family:var(--font-display);font-size:1.4rem;margin:2.5rem 0 .75rem">1. Responsable del tratamiento</h2>
+  <p style="color:var(--gray-400);line-height:1.8;margin-bottom:1rem;font-size:.925rem">Iniestra Agency, con domicilio en {site.contacto.ubicacion}, es el responsable del tratamiento de los datos personales que nos facilite a través de este sitio web. Email de contacto: <strong>{site.contacto.email}</strong></p>
+
+  <h2 style="font-family:var(--font-display);font-size:1.4rem;margin:2.5rem 0 .75rem">2. Datos que recopilamos</h2>
+  <ul style="color:var(--gray-400);line-height:1.8;margin:.5rem 0 1rem 1.25rem;font-size:.925rem;list-style:disc">
+    <li>Nombre y apellidos</li><li>Dirección de correo electrónico</li>
+    <li>Número de teléfono (si se facilita)</li><li>Nombre de empresa</li>
+    <li>Datos de navegación (cookies técnicas)</li><li>Información incluida en el mensaje de contacto</li>
+  </ul>
+
+  <h2 style="font-family:var(--font-display);font-size:1.4rem;margin:2.5rem 0 .75rem">3. Finalidad del tratamiento</h2>
+  <ul style="color:var(--gray-400);line-height:1.8;margin:.5rem 0 1rem 1.25rem;font-size:.925rem;list-style:disc">
+    <li>Responder a tu consulta o solicitud de presupuesto</li>
+    <li>Gestionar la relación comercial si decides contratarnos</li>
+    <li>Enviar comunicaciones comerciales, previa aceptación expresa</li>
+    <li>Cumplir obligaciones legales</li>
+  </ul>
+
+  <h2 style="font-family:var(--font-display);font-size:1.4rem;margin:2.5rem 0 .75rem">4. Conservación de datos</h2>
+  <p style="color:var(--gray-400);line-height:1.8;margin-bottom:1rem;font-size:.925rem">Los datos se conservarán durante el tiempo necesario para atender tu solicitud y, en caso de contratación, durante la vigencia de la relación contractual más el período legalmente exigido.</p>
+
+  <h2 style="font-family:var(--font-display);font-size:1.4rem;margin:2.5rem 0 .75rem">5. Tus derechos</h2>
+  <ul style="color:var(--gray-400);line-height:1.8;margin:.5rem 0 1rem 1.25rem;font-size:.925rem;list-style:disc">
+    <li><strong>Acceso:</strong> conocer qué datos tenemos sobre ti</li>
+    <li><strong>Rectificación:</strong> corregir datos inexactos</li>
+    <li><strong>Supresión:</strong> solicitar la eliminación de tus datos</li>
+    <li><strong>Oposición:</strong> oponerte al tratamiento</li>
+    <li><strong>Portabilidad:</strong> recibir tus datos en formato estructurado</li>
+  </ul>
+
+  <h2 style="font-family:var(--font-display);font-size:1.4rem;margin:2.5rem 0 .75rem">6. Cookies</h2>
+  <p style="color:var(--gray-400);line-height:1.8;margin-bottom:1rem;font-size:.925rem">Este sitio web utiliza únicamente cookies técnicas estrictamente necesarias para su funcionamiento. No utilizamos cookies de seguimiento ni publicidad sin tu consentimiento previo.</p>
+
+  <div style="margin-top:2rem">
+    <a href="/" class="btn btn-outline">← Volver al inicio</a>
+  </div>
+</main>
+</Layout>

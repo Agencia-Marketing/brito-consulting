@@ -1,0 +1,39 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import site from '../../content/site.json';
+const t = site.terminos;
+---
+<Layout title={`${t.title} ${t.title_highlight} — Iniestra Agency`}>
+<main style="padding-top:8rem;padding-bottom:6rem;max-width:48rem;margin:0 auto;padding-left:1.5rem;padding-right:1.5rem">
+  <span class="label-tag tag-orange" style="margin-bottom:1rem">{t.tag}</span>
+  <h1 class="headline-lg" style="margin-top:1rem">{t.title} <span class="highlight-text">{t.title_highlight}</span></h1>
+  <p style="color:var(--gray-500);font-size:.85rem;margin-top:.5rem;margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid var(--border)">Última actualización: {t.fecha}</p>
+
+  <h2 style="font-family:var(--font-display);font-size:1.4rem;margin:2.5rem 0 .75rem">1. Objeto</h2>
+  <p style="color:var(--gray-400);line-height:1.8;margin-bottom:1rem;font-size:.925rem">Las presentes condiciones generales regulan el acceso y uso del sitio web de Iniestra Agency, así como la contratación de los servicios ofrecidos a través del mismo. El acceso al sitio implica la aceptación plena de estos términos.</p>
+
+  <h2 style="font-family:var(--font-display);font-size:1.4rem;margin:2.5rem 0 .75rem">2. Uso del sitio web</h2>
+  <ul style="color:var(--gray-400);line-height:1.8;margin:.5rem 0 1rem 1.25rem;font-size:.925rem;list-style:disc">
+    <li>Utilizar el sitio con fines fraudulentos o ilícitos</li>
+    <li>Reproducir, distribuir o modificar contenidos sin autorización expresa</li>
+    <li>Transmitir virus informáticos o cualquier código dañino</li>
+    <li>Recopilar datos de otros usuarios sin su consentimiento</li>
+  </ul>
+
+  <h2 style="font-family:var(--font-display);font-size:1.4rem;margin:2.5rem 0 .75rem">3. Propiedad intelectual</h2>
+  <p style="color:var(--gray-400);line-height:1.8;margin-bottom:1rem;font-size:.925rem">Todos los contenidos del sitio web son propiedad de Iniestra Agency o de terceros que han autorizado su uso. No se permite su reproducción total o parcial sin autorización escrita previa.</p>
+
+  <h2 style="font-family:var(--font-display);font-size:1.4rem;margin:2.5rem 0 .75rem">4. Contratación de servicios</h2>
+  <p style="color:var(--gray-400);line-height:1.8;margin-bottom:1rem;font-size:.925rem">La contratación de servicios se formaliza mediante propuesta comercial firmada por ambas partes. Los términos específicos se detallarán en el correspondiente presupuesto o contrato de prestación de servicios.</p>
+
+  <h2 style="font-family:var(--font-display);font-size:1.4rem;margin:2.5rem 0 .75rem">5. Limitación de responsabilidad</h2>
+  <p style="color:var(--gray-400);line-height:1.8;margin-bottom:1rem;font-size:.925rem">Iniestra Agency no garantiza la disponibilidad continua del sitio web ni se responsabiliza de los daños derivados de interrupciones o fallos técnicos fuera de su control.</p>
+
+  <h2 style="font-family:var(--font-display);font-size:1.4rem;margin:2.5rem 0 .75rem">6. Ley aplicable y jurisdicción</h2>
+  <p style="color:var(--gray-400);line-height:1.8;margin-bottom:1rem;font-size:.925rem">Estos términos se rigen por la legislación española. Para cualquier controversia, las partes se someten a los juzgados y tribunales de Madrid. Contacto: <strong>{site.contacto.email}</strong></p>
+
+  <div style="margin-top:2rem">
+    <a href="/" class="btn btn-outline">← Volver al inicio</a>
+  </div>
+</main>
+</Layout>

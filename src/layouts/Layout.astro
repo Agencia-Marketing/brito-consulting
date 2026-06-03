@@ -1,0 +1,242 @@
+---
+import '../styles/global.css';
+import site from '../content/site.json';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = site.meta.title, description = site.meta.description } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Nav -->
+  <header>
+    <nav class="nav-pill">
+      <a href="/" class="nav-logo">
+        <div class="nav-logo-icon">
+          <span class="material-symbols-outlined" style="font-size:1.1rem">bolt</span>
+        </div>
+        <div>
+          <div style="line-height:1">{site.nav.brand}</div>
+          <div style="font-size:.65rem;font-weight:500;color:var(--gray-500);line-height:1">{site.nav.subbrand}</div>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="/#inicio">Inicio</a></li>
+        <li><a href="/#nosotros">Nosotros</a></li>
+        <li><a href="/#servicios">Servicios</a></li>
+        <li><a href="/#portafolio">Portafolio</a></li>
+        <li><a href="/#contacto">Contacto</a></li>
+      </ul>
+
+      <div style="display:flex;align-items:center;gap:.75rem">
+        <a href="/#contacto" class="btn btn-outline" style="padding:.55rem 1.1rem;font-size:.8rem">{site.nav.cta_secondary}</a>
+        <a href="/#contacto" class="btn btn-orange" style="padding:.55rem 1.1rem;font-size:.8rem">{site.nav.cta_primary}</a>
+        <button class="menu-btn" id="menuBtn" aria-label="Menú">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul style="display:flex;flex-direction:column;gap:.25rem;margin-bottom:1rem">
+      <li><a href="/#inicio"     onclick="closeMobile()">Inicio</a></li>
+      <li><a href="/#nosotros"   onclick="closeMobile()">Nosotros</a></li>
+      <li><a href="/#servicios"  onclick="closeMobile()">Servicios</a></li>
+      <li><a href="/#portafolio" onclick="closeMobile()">Portafolio</a></li>
+      <li><a href="/#faq"        onclick="closeMobile()">FAQ</a></li>
+      <li><a href="/#contacto"   onclick="closeMobile()">Contacto</a></li>
+    </ul>
+    <a href="/#contacto" class="btn btn-orange" style="width:100%;justify-content:center" onclick="closeMobile()">Contáctanos</a>
+  </div>
+
+  <slot />
+
+  <!-- Footer -->
+  <footer>
+    <div style="display:grid;gap:2.5rem;max-width:72rem;margin:0 auto">
+      <div style="display:grid;gap:2.5rem" class="footer-grid-inner">
+        <div>
+          <a href="/" class="nav-logo" style="display:inline-flex">
+            <div class="nav-logo-icon"><span class="material-symbols-outlined" style="font-size:1.1rem">bolt</span></div>
+            <div>
+              <div style="line-height:1;font-weight:700">{site.nav.brand}</div>
+              <div style="font-size:.65rem;color:var(--gray-500);line-height:1;font-weight:500">{site.nav.subbrand}</div>
+            </div>
+          </a>
+          <p style="color:var(--gray-400);font-size:.875rem;line-height:1.7;margin:.75rem 0 1.25rem">{site.footer.tagline}</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram">In</a>
+            <a href="#" aria-label="LinkedIn">Li</a>
+            <a href="#" aria-label="X/Twitter">X</a>
+            <a href="#" aria-label="YouTube">Yt</a>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2rem">
+          <div>
+            <h4 style="font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--gray-500);margin-bottom:1rem">Páginas</h4>
+            <ul style="display:flex;flex-direction:column;gap:.6rem">
+              <li><a href="/#inicio" style="font-size:.875rem;color:var(--gray-400);transition:color .2s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--gray-400)'">Inicio</a></li>
+              <li><a href="/#nosotros" style="font-size:.875rem;color:var(--gray-400)" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--gray-400)'">Nosotros</a></li>
+              <li><a href="/#servicios" style="font-size:.875rem;color:var(--gray-400)" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--gray-400)'">Servicios</a></li>
+              <li><a href="/#portafolio" style="font-size:.875rem;color:var(--gray-400)" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--gray-400)'">Portafolio</a></li>
+              <li><a href="/#contacto" style="font-size:.875rem;color:var(--gray-400)" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--gray-400)'">Contacto</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 style="font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--gray-500);margin-bottom:1rem">Servicios</h4>
+            <ul style="display:flex;flex-direction:column;gap:.6rem">
+              {site.servicios.tabs.slice(0,5).map(tab => (
+                <li><a href="/#servicios" style="font-size:.875rem;color:var(--gray-400)" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--gray-400)'">{tab.label}</a></li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h4 style="font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--gray-500);margin-bottom:1rem">Legal</h4>
+            <ul style="display:flex;flex-direction:column;gap:.6rem">
+              <li><a href="/#faq" style="font-size:.875rem;color:var(--gray-400)" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--gray-400)'">FAQ</a></li>
+              <li><a href="/privacidad" style="font-size:.875rem;color:var(--gray-400)" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--gray-400)'">Privacidad</a></li>
+              <li><a href="/terminos" style="font-size:.875rem;color:var(--gray-400)" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--gray-400)'">Términos</a></li>
+            </ul>
+            <h4 style="font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--gray-500);margin:1.5rem 0 1rem">Contacto</h4>
+            <ul style="display:flex;flex-direction:column;gap:.6rem">
+              <li><a href={`tel:${site.contacto.telefono}`} style="font-size:.875rem;color:var(--gray-400)">{site.contacto.telefono}</a></li>
+              <li><a href={`mailto:${site.contacto.email}`} style="font-size:.875rem;color:var(--gray-400)">{site.contacto.email}</a></li>
+              <li style="font-size:.875rem;color:var(--gray-500)">{site.contacto.ubicacion}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid var(--border);margin-top:2.5rem;padding-top:1.5rem;max-width:72rem;margin-left:auto;margin-right:auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem">
+      <p style="font-size:.8rem;color:var(--gray-600)">{site.footer.copyright}</p>
+      <div style="display:flex;gap:1.5rem">
+        <a href="/privacidad" style="font-size:.8rem;color:var(--gray-600)" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--gray-600)'">Privacidad</a>
+        <a href="/terminos"   style="font-size:.8rem;color:var(--gray-600)" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--gray-600)'">Términos</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Cursor
+    const dot  = document.getElementById('cursorDot')!;
+    const ring = document.getElementById('cursorRing')!;
+    let rx=0,ry=0,mx=0,my=0;
+    document.addEventListener('mousemove',e=>{ mx=e.clientX; my=e.clientY; dot.style.left=mx+'px'; dot.style.top=my+'px'; });
+    (function trackRing(){
+      rx+=(mx-rx)*.12; ry+=(my-ry)*.12;
+      ring.style.left=rx+'px'; ring.style.top=ry+'px';
+      requestAnimationFrame(trackRing);
+    })();
+    document.querySelectorAll('a,button,.plan-card,.portfolio-item,.team-card').forEach(el=>{
+      el.addEventListener('mouseenter',()=>{ ring.style.width='56px'; ring.style.height='56px'; });
+      el.addEventListener('mouseleave',()=>{ ring.style.width='40px'; ring.style.height='40px'; });
+    });
+
+    // Mobile menu
+    const menuBtn    = document.getElementById('menuBtn')!;
+    const mobileMenu = document.getElementById('mobileMenu')!;
+    menuBtn.addEventListener('click',()=> mobileMenu.classList.toggle('open'));
+    function closeMobile(){ mobileMenu.classList.remove('open'); }
+    (window as any).closeMobile = closeMobile;
+
+    // Reveal on scroll
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    },{ threshold:.08 });
+    document.querySelectorAll('.reveal,.reveal-scale,.stagger').forEach(el=>observer.observe(el));
+
+    // Counter
+    const counterObserver = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(!e.isIntersecting) return;
+        const el = e.target as HTMLElement;
+        const target = +(el.dataset.target||0);
+        const suffix = el.dataset.suffix||'';
+        const dur=1600; const start=performance.now();
+        (function tick(now:number){
+          const p=Math.min((now-start)/dur,1);
+          const ease=1-(1-p)**3;
+          el.textContent=Math.floor(ease*target)+suffix;
+          if(p<1) requestAnimationFrame(tick);
+        })(start);
+        counterObserver.unobserve(el);
+      });
+    },{ threshold:.5 });
+    document.querySelectorAll('[data-target]').forEach(el=>counterObserver.observe(el));
+
+    // Tabs
+    function switchTab(id:string, btn:HTMLElement){
+      document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+      document.getElementById('tab-'+id)?.classList.add('active');
+      btn.classList.add('active');
+    }
+    (window as any).switchTab = switchTab;
+
+    // FAQ
+    function toggleFaq(btn:HTMLElement){
+      const item = btn.closest('.faq-item')!;
+      const body = item.querySelector('.faq-body')!;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i=>{
+        i.classList.remove('open');
+        i.querySelector('.faq-body')!.classList.remove('open');
+      });
+      if(!isOpen){ item.classList.add('open'); body.classList.add('open'); }
+    }
+    (window as any).toggleFaq = toggleFaq;
+
+    // Magnetic buttons
+    document.querySelectorAll<HTMLElement>('.magnetic').forEach(btn=>{
+      btn.addEventListener('mousemove',(e:MouseEvent)=>{
+        const r=btn.getBoundingClientRect();
+        const dx=(e.clientX-r.left-r.width/2)*.3;
+        const dy=(e.clientY-r.top-r.height/2)*.3;
+        btn.style.transform=`translate(${dx}px,${dy}px) scale(1.03)`;
+      });
+      btn.addEventListener('mouseleave',()=>{ btn.style.transform=''; });
+    });
+
+    // Form
+    function handleForm(e:Event){
+      e.preventDefault();
+      const btn = document.getElementById('submitBtn') as HTMLButtonElement;
+      btn.textContent='Enviando...'; btn.disabled=true;
+      setTimeout(()=>{
+        const success = document.getElementById('formSuccess')!;
+        success.style.display='block';
+        btn.style.display='none';
+      },1000);
+    }
+    (window as any).handleForm = handleForm;
+  </script>
+</body>
+</html>
+
+<style>
+  @media(min-width:1024px) {
+    .footer-grid-inner { grid-template-columns: 1fr 2fr; }
+  }
+</style>
