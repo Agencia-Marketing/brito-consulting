@@ -35,8 +35,8 @@ const s = site;
           <div class="orb-ring"></div>
           <div class="orb-ring"></div>
           <div style="position:absolute;inset:15%;border-radius:50%;background:var(--bg-card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.5rem">
-            <span class="material-symbols-outlined" style="font-size:2.5rem;color:var(--orange)">bolt</span>
-            <span style="font-size:.75rem;color:var(--gray-400);font-weight:600">Iniestra Agency</span>
+            <img src="/isotipo.png" alt="Brito Consulting" style="width:48%;height:auto" />
+            <span style="font-size:.75rem;color:var(--gray-400);font-weight:600">{s.nav.brand} {s.nav.subbrand}</span>
           </div>
           <div class="orb-dot"></div>
           <div class="stat-badge"><div class="dot"></div>{s.hero.badge1}</div>
@@ -48,14 +48,14 @@ const s = site;
 </section>
 
 <!-- ══ VALUE PROP ══ -->
-<div style="background:#fff;padding:5rem 1.5rem">
+<div style="background:var(--bg-card);padding:5rem 1.5rem">
   <div class="container value-grid">
     <div class="reveal">
       <span class="label-tag tag-dark">{s.value.tag}</span>
-      <h2 class="headline-lg" style="margin-top:.75rem;color:#000">
+      <h2 class="headline-lg" style="margin-top:.75rem;color:var(--white)">
         {s.value.title} <span style="color:var(--orange);font-style:italic">{s.value.title_highlight}</span>
       </h2>
-      <p style="color:#555;margin-top:1rem;line-height:1.75">{s.value.description}</p>
+      <p style="color:var(--gray-400);margin-top:1rem;line-height:1.75">{s.value.description}</p>
       <a href="#servicios" style="display:inline-flex;align-items:center;gap:.4rem;color:var(--orange);font-weight:700;font-size:.875rem;margin-top:1.5rem">
         {s.value.link_text}
         <span class="material-symbols-outlined" style="font-size:1rem">arrow_forward</span>
@@ -63,13 +63,13 @@ const s = site;
     </div>
     <div style="display:flex;flex-direction:column;gap:.75rem" class="stagger">
       {s.value.features.map(f => (
-        <div style="display:flex;gap:1rem;align-items:flex-start;padding:1rem;border-radius:14px;background:#f9f9f9;border:1px solid #eee">
+        <div style="display:flex;gap:1rem;align-items:flex-start;padding:1rem;border-radius:14px;background:var(--bg-elevated);border:1px solid var(--border)">
           <div style="width:40px;height:40px;border-radius:10px;background:var(--orange-dim);display:flex;align-items:center;justify-content:center;flex-shrink:0">
             <span class="material-symbols-outlined" style="color:var(--orange)">{f.icon}</span>
           </div>
           <div>
-            <div style="font-weight:700;color:#000;font-size:.9rem;margin-bottom:.2rem">{f.title}</div>
-            <div style="font-size:.8rem;color:#666">{f.desc}</div>
+            <div style="font-weight:700;color:var(--white);font-size:.9rem;margin-bottom:.2rem">{f.title}</div>
+            <div style="font-size:.8rem;color:var(--gray-400)">{f.desc}</div>
           </div>
         </div>
       ))}
@@ -146,8 +146,8 @@ const s = site;
       </h2>
       <p style="color:var(--gray-400);margin-top:1rem;line-height:1.75">{s.porque.description}</p>
       <div style="margin-top:1.5rem;display:flex;align-items:center;gap:1rem;padding:1.25rem;background:var(--bg-elevated);border-radius:16px;border:1px solid var(--border)">
-        <div style="width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--orange),#c2410c);flex-shrink:0;display:flex;align-items:center;justify-content:center">
-          <span class="material-symbols-outlined" style="color:#fff">person</span>
+        <div style="width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--bg-elevated),#1A1A1C);flex-shrink:0;display:flex;align-items:center;justify-content:center">
+          <span class="material-symbols-outlined" style="color:var(--white)">person</span>
         </div>
         <div>
           <div style="font-weight:700;font-size:.9rem">{s.porque.founder_name}</div>
@@ -329,7 +329,7 @@ const s = site;
           </div>
         ))}
         <div class="card card-orange">
-          <span class="material-symbols-outlined" style="color:var(--orange);font-size:1.5rem">bolt</span>
+          <span class="material-symbols-outlined" style="color:var(--orange);font-size:1.5rem">schedule</span>
           <h4 style="font-weight:700;margin-top:.5rem;margin-bottom:.4rem">{s.contacto.badge_title}</h4>
           <p style="color:var(--gray-400);font-size:.875rem">{s.contacto.badge_desc}</p>
         </div>

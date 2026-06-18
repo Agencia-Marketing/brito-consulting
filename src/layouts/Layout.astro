@@ -18,7 +18,7 @@ const { title = site.meta.title, description = site.meta.description } = Astro.p
   <meta name="description" content={description} />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
 </head>
 <body>
@@ -32,7 +32,7 @@ const { title = site.meta.title, description = site.meta.description } = Astro.p
     <nav class="nav-pill">
       <a href="/" class="nav-logo">
         <div class="nav-logo-icon">
-          <span class="material-symbols-outlined" style="font-size:1.1rem">bolt</span>
+          <img src="/isotipo.png" alt="Brito Consulting" />
         </div>
         <div>
           <div style="line-height:1">{site.nav.brand}</div>
@@ -79,7 +79,7 @@ const { title = site.meta.title, description = site.meta.description } = Astro.p
       <div style="display:grid;gap:2.5rem" class="footer-grid-inner">
         <div>
           <a href="/" class="nav-logo" style="display:inline-flex">
-            <div class="nav-logo-icon"><span class="material-symbols-outlined" style="font-size:1.1rem">bolt</span></div>
+            <div class="nav-logo-icon"><img src="/isotipo.png" alt="Brito Consulting" /></div>
             <div>
               <div style="line-height:1;font-weight:700">{site.nav.brand}</div>
               <div style="font-size:.65rem;color:var(--gray-500);line-height:1;font-weight:500">{site.nav.subbrand}</div>

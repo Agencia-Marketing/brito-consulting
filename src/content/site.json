@@ -12,20 +12,20 @@
     "fecha": "1 de enero de 2025"
   },
   "meta": {
-    "title": "Iniestra Agency — Agencia de Marketing Digital",
-    "description": "Agencia de marketing digital especializada en desarrollo web, redes sociales, diseño gráfico, videomarketing y más."
+    "title": "Brito Consulting — Agencia de Marketing y Consulta de Negocios",
+    "description": "Agencia de marketing y consulta de negocios. Desarrollo web, redes sociales, diseño gráfico, videomarketing, publicidad y agentes IA para hacer crecer tu negocio."
   },
   "nav": {
-    "brand": "Iniestra",
-    "subbrand": "Agency",
+    "brand": "Brito",
+    "subbrand": "Consulting",
     "cta_secondary": "Hablemos",
     "cta_primary": "Contáctanos"
   },
   "hero": {
-    "tag": "Agencia de Marketing Digital",
-    "title": "TU ESTRATEGIA DIGITAL",
-    "title_highlight": "que convierte",
-    "description": "Diseñamos experiencias digitales que generan resultados reales. Desde desarrollo web hasta campañas de performance — todo bajo un mismo techo.",
+    "tag": "Marketing y Consulta de Negocios",
+    "title": "NADA ES IMPOSIBLE",
+    "title_highlight": "con el equipo correcto",
+    "description": "Combinamos marketing y consultoría de negocios para convertir tus ideas en crecimiento real. Estrategia, ejecución y resultados medibles — todo bajo un mismo techo.",
     "cta_primary": "Ver servicios",
     "cta_secondary": "Hablemos",
     "badge1": "+100 Clientes satisfechos",
@@ -1165,12 +1165,12 @@
     ]
   },
   "porque": {
-    "tag": "Por qué Iniestra",
+    "tag": "Por qué Brito Consulting",
     "title": "No somos una agencia",
     "title_highlight": "más",
     "description": "En un mercado lleno de promesas vacías, nosotros entregamos resultados demostrables respaldados por datos, experiencia y un equipo apasionado.",
-    "founder_name": "Miguel Iniestra",
-    "founder_role": "Fundador & CEO — 10+ años de experiencia",
+    "founder_name": "Equipo Brito Consulting",
+    "founder_role": "Marketing y consultoría — 10+ años de experiencia",
     "features": [
       {
         "icon": "verified",
@@ -1271,19 +1271,19 @@
     "title_highlight": "respaldan",
     "items": [
       {
-        "texto": "Iniestra transformó completamente nuestra presencia digital. En 3 meses triplicamos nuestras ventas online y la web es espectacular.",
+        "texto": "El equipo transformó completamente nuestra presencia digital. En 3 meses triplicamos nuestras ventas online y la web es espectacular.",
         "nombre": "Carlos Amador",
         "rol": "CEO, TechRetail",
         "iniciales": "CA"
       },
       {
-        "texto": "El equipo de Iniestra entiende realmente lo que necesitas. Las campañas de Google Ads nos generan un ROI constante del 280%.",
+        "texto": "El equipo entiende realmente lo que necesitas. Las campañas de Google Ads nos generan un ROI constante del 280%.",
         "nombre": "María López",
         "rol": "Directora de Marketing, ModaFit",
         "iniciales": "ML"
       },
       {
-        "texto": "Probamos varias agencias y ninguna como Iniestra. Profesionales, creativos y con resultados tangibles desde el primer mes.",
+        "texto": "Probamos varias agencias y ninguna como Brito Consulting. Profesionales, creativos y con resultados tangibles desde el primer mes.",
         "nombre": "Javier Prada",
         "rol": "Fundador, Agro Digital",
         "iniciales": "JP"
@@ -1301,9 +1301,9 @@
     "clientes": "500+",
     "equipo": [
       {
-        "nombre": "Miguel Iniestra",
+        "nombre": "Dirección",
         "rol": "CEO & Estrategia",
-        "iniciales": "MI"
+        "iniciales": "BC"
       },
       {
         "nombre": "Laura Sánchez",
@@ -1328,7 +1328,7 @@
     "title_highlight": "frecuentes",
     "items": [
       {
-        "pregunta": "¿Cuánto cuesta trabajar con Iniestra?",
+        "pregunta": "¿Cuánto cuesta trabajar con Brito Consulting?",
         "respuesta": "Cada proyecto es único. Ofrecemos presupuestos a medida según el alcance, objetivos y urgencia. Contáctanos para una valoración gratuita sin compromiso. Trabajamos desde proyectos puntuales hasta retainers mensuales."
       },
       {
@@ -1367,7 +1367,7 @@
     "title_highlight": "proyecto",
     "subtitulo": "Primera consulta siempre gratuita",
     "telefono": "+34 639 494 000",
-    "email": "hola@iniestra.agency",
+    "email": "hola@britoconsulting.com",
     "ubicacion": "Madrid, España",
     "horario": "Lun–Vie, 9:00–18:00",
     "badge_title": "Respuesta en 24h",
@@ -1393,6 +1393,6 @@
   },
   "footer": {
     "tagline": "Agencia de marketing digital especializada en resultados. Transformamos ideas en crecimiento real.",
-    "copyright": "© 2025 Iniestra Agency. Todos los derechos reservados."
+    "copyright": "© 2025 Brito Consulting. Todos los derechos reservados."
   }
 }
