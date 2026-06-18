@@ -219,16 +219,35 @@ const { title = site.meta.title, description = site.meta.description } = Astro.p
       btn.addEventListener('mouseleave',()=>{ btn.style.transform=''; });
     });
 
-    // Form
-    function handleForm(e:Event){
+    // Form — envío real a la API
+    async function handleForm(e:Event){
       e.preventDefault();
+      const form = e.target as HTMLFormElement;
       const btn = document.getElementById('submitBtn') as HTMLButtonElement;
+      const success = document.getElementById('formSuccess')!;
+      const errorBox = document.getElementById('formError')!;
+      errorBox.style.display='none';
+      const original = btn.innerHTML;
       btn.textContent='Enviando...'; btn.disabled=true;
-      setTimeout(()=>{
-        const success = document.getElementById('formSuccess')!;
+      try {
+        const data = Object.fromEntries(new FormData(form).entries());
+        const res = await fetch('/api/contact', {
+          method:'POST',
+          headers:{ 'Content-Type':'application/json' },
+          body: JSON.stringify(data),
+        });
+        if(!res.ok){
+          const j = await res.json().catch(()=>({}));
+          throw new Error((j as any).error || 'No se pudo enviar el mensaje.');
+        }
         success.style.display='block';
         btn.style.display='none';
-      },1000);
+        form.reset();
+      } catch(err:any){
+        errorBox.textContent = err?.message || 'Error al enviar. Inténtalo de nuevo o escríbenos por email.';
+        errorBox.style.display='block';
+        btn.innerHTML=original; btn.disabled=false;
+      }
     }
     (window as any).handleForm = handleForm;
   </script>

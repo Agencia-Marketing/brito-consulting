@@ -27,7 +27,7 @@
     "title_highlight": "con el equipo correcto",
     "description": "Combinamos marketing y consultoría de negocios para convertir tus ideas en crecimiento real. Estrategia, ejecución y resultados medibles — todo bajo un mismo techo.",
     "cta_primary": "Ver servicios",
-    "cta_secondary": "Hablemos",
+    "cta_secondary": "Contacto",
     "badge1": "+100 Clientes satisfechos",
     "badge2": "500+ Proyectos"
   },
@@ -192,7 +192,6 @@
             "nombre": "Enterprise",
             "icon": "corporate_fare",
             "precio": "A medida",
-            "periodo": "",
             "desc": "Solución web 100% personalizada para grandes organizaciones",
             "popular": false,
             "features": [
@@ -349,7 +348,6 @@
             "nombre": "Enterprise",
             "icon": "corporate_fare",
             "precio": "A medida",
-            "periodo": "",
             "desc": "Para marcas con altos volúmenes y múltiples mercados",
             "popular": false,
             "features": [
@@ -506,7 +504,6 @@
             "nombre": "Enterprise",
             "icon": "corporate_fare",
             "precio": "A medida",
-            "periodo": "",
             "desc": "Departamento de diseño externo para grandes empresas",
             "popular": false,
             "features": [
@@ -663,7 +660,6 @@
             "nombre": "Campaña",
             "icon": "live_tv",
             "precio": "A medida",
-            "periodo": "",
             "desc": "Campaña audiovisual completa para lanzamientos o eventos",
             "popular": false,
             "features": [
@@ -820,7 +816,6 @@
             "nombre": "Enterprise",
             "icon": "corporate_fare",
             "precio": "A medida",
-            "periodo": "",
             "desc": "Gestión de grandes presupuestos publicitarios",
             "popular": false,
             "features": [
@@ -977,7 +972,6 @@
             "nombre": "Enterprise",
             "icon": "corporate_fare",
             "precio": "A medida",
-            "periodo": "",
             "desc": "Transformación digital completa con IA para grandes empresas",
             "popular": false,
             "features": [
@@ -1134,7 +1128,6 @@
             "nombre": "Enterprise",
             "icon": "corporate_fare",
             "precio": "A medida",
-            "periodo": "",
             "desc": "Redacción editorial completa para marcas líderes",
             "popular": false,
             "features": [
@@ -1207,7 +1200,6 @@
     },
     {
       "target": 15,
-      "suffix": "",
       "label": "Países atendidos"
     },
     {

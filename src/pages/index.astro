@@ -339,28 +339,31 @@ const s = site;
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
             <div style="margin-bottom:1.25rem">
               <label style="display:block;font-size:.8rem;font-weight:700;color:var(--gray-400);margin-bottom:.5rem;text-transform:uppercase;letter-spacing:.06em">Nombre *</label>
-              <input type="text" class="form-input" placeholder="Tu nombre" required />
+              <input type="text" name="nombre" class="form-input" placeholder="Tu nombre" required />
             </div>
             <div style="margin-bottom:1.25rem">
               <label style="display:block;font-size:.8rem;font-weight:700;color:var(--gray-400);margin-bottom:.5rem;text-transform:uppercase;letter-spacing:.06em">Email *</label>
-              <input type="email" class="form-input" placeholder="tu@email.com" required />
+              <input type="email" name="email" class="form-input" placeholder="tu@email.com" required />
             </div>
           </div>
           <div style="margin-bottom:1.25rem">
             <label style="display:block;font-size:.8rem;font-weight:700;color:var(--gray-400);margin-bottom:.5rem;text-transform:uppercase;letter-spacing:.06em">Empresa</label>
-            <input type="text" class="form-input" placeholder="Nombre de tu empresa" />
+            <input type="text" name="empresa" class="form-input" placeholder="Nombre de tu empresa" />
           </div>
           <div style="margin-bottom:1.25rem">
             <label style="display:block;font-size:.8rem;font-weight:700;color:var(--gray-400);margin-bottom:.5rem;text-transform:uppercase;letter-spacing:.06em">Servicio de interés</label>
-            <select class="form-select">
+            <select name="servicio" class="form-select">
               <option value="">Selecciona un servicio...</option>
               {s.contacto.servicios_form.map(sv => <option>{sv}</option>)}
             </select>
           </div>
           <div style="margin-bottom:1.25rem">
             <label style="display:block;font-size:.8rem;font-weight:700;color:var(--gray-400);margin-bottom:.5rem;text-transform:uppercase;letter-spacing:.06em">Mensaje *</label>
-            <textarea class="form-textarea" placeholder="Cuéntanos sobre tu proyecto..." required></textarea>
+            <textarea name="mensaje" class="form-textarea" placeholder="Cuéntanos sobre tu proyecto..." required></textarea>
           </div>
+          <!-- Honeypot anti-spam (oculto a humanos) -->
+          <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" aria-hidden="true" />
+          <div id="formError" style="display:none;margin-bottom:1rem;padding:.75rem 1rem;background:rgba(220,38,38,.12);border:1px solid rgba(220,38,38,.4);border-radius:12px;font-size:.85rem;font-weight:600;color:#f87171"></div>
           <button type="submit" class="btn btn-orange" style="width:100%;justify-content:center;font-size:.9rem" id="submitBtn">
             <span class="material-symbols-outlined" style="font-size:1rem">send</span>
             Enviar mensaje
