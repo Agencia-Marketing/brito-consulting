@@ -18,7 +18,9 @@ export default config({
   singletons: {
     site: singleton({
       label: 'Contenido del sitio',
-      path: 'src/content/site',
+      // El `/` final hace que Keystatic use dataLocation 'index' y lea
+      // src/content/site/index.json (sin él buscaría src/content/site.json).
+      path: 'src/content/site/',
       format: { data: 'json' },
       schema: {
         // ── PÁGINA PRIVACIDAD
