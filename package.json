@@ -10,6 +10,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "deploy": "astro build && wrangler deploy -c dist/server/wrangler.json",
     "postinstall": "patch-package"
   },
   "dependencies": {
