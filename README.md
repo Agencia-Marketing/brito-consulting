@@ -1,8 +1,8 @@
 # Brito Consulting — Sitio web corporativo
 
 Sitio web *one-page* de **Brito Consulting**, agencia de marketing y consultoría de negocios.
-Construido con **Astro** y editable de forma visual mediante **TinaCMS**. Diseño de tema oscuro
-con identidad de marca monocroma (charcoal, blanco, negro).
+Construido con **Astro** y editable mediante **Keystatic** (CMS open-source basado en Git).
+Diseño de tema oscuro con identidad de marca monocroma (charcoal, blanco, negro).
 
 ---
 
@@ -13,11 +13,11 @@ con identidad de marca monocroma (charcoal, blanco, negro).
 - [Puesta en marcha](#puesta-en-marcha)
 - [Scripts disponibles](#scripts-disponibles)
 - [Estructura del proyecto](#estructura-del-proyecto)
-- [Gestión de contenido (TinaCMS)](#gestión-de-contenido-tinacms)
+- [Gestión de contenido (Keystatic)](#gestión-de-contenido-keystatic)
 - [Variables de entorno](#variables-de-entorno)
 - [Diseño y marca](#diseño-y-marca)
-- [Despliegue](#despliegue)
-- [Convenciones de contribución](#convenciones-de-contribución)
+- [Despliegue (Cloudflare)](#despliegue-cloudflare)
+- [Notas y convenciones](#notas-y-convenciones)
 
 ---
 
@@ -26,17 +26,20 @@ con identidad de marca monocroma (charcoal, blanco, negro).
 | Capa | Tecnología | Versión |
 | :--- | :--- | :--- |
 | Framework | [Astro](https://astro.build) | `^6.4.4` |
-| CMS | [TinaCMS](https://tina.io) + `@tinacms/cli` | `^3.9.0` / `^2.4.3` |
+| CMS | [Keystatic](https://keystatic.com) (`@keystatic/core` + `@keystatic/astro`) | `^0.5` / `^5.1` |
+| UI del CMS | [React](https://react.dev) (solo en la ruta `/keystatic`) | `^18.3` |
 | Estilos | [Tailwind CSS](https://tailwindcss.com) (vía `@tailwindcss/vite`) + CSS propio | `^4.3.0` |
+| Adapter | [`@astrojs/cloudflare`](https://docs.astro.build/en/guides/integrations-guide/cloudflare/) | `^13.7` |
 | Lenguaje | TypeScript (config `astro/tsconfigs/strict`) | — |
 | Tipografías | Bricolage Grotesque (display) + Poppins (texto) + Material Symbols | Google Fonts |
 
-El sitio se genera de forma **100 % estática** (`output: static`).
+Las páginas de contenido se **prerenderizan estáticas**; solo las rutas del admin
+(`/keystatic` y `/api/keystatic/...`) se sirven on-demand (SSR) a través del adapter.
 
 ## Requisitos
 
 - **Node.js ≥ 22.12.0**
-- npm (incluido con Node)
+- npm
 
 ## Puesta en marcha
 
@@ -44,28 +47,30 @@ El sitio se genera de forma **100 % estática** (`output: static`).
 # 1. Instalar dependencias
 npm install
 
-# 2. Levantar entorno de desarrollo (Astro + TinaCMS)
+# 2. Levantar el entorno de desarrollo
 npm run dev
 ```
 
 - Sitio: <http://localhost:4321>
-- Editor de contenido: <http://localhost:4321/admin>
+- Editor de contenido (Keystatic, modo local): <http://localhost:4321/keystatic>
+
+En desarrollo, Keystatic funciona en **modo local** (sin autenticación) y guarda los cambios
+directamente en `src/content/site/index.json`.
 
 ## Scripts disponibles
 
 | Comando | Acción |
 | :--- | :--- |
-| `npm run dev` | Arranca TinaCMS + servidor de desarrollo de Astro en `localhost:4321` |
-| `npm run build` | Compila el esquema de Tina y genera el sitio estático en `./dist/` |
-| `npm run preview` | Sirve localmente la build de producción |
-| `npm run astro ...` | Ejecuta comandos de la CLI de Astro (`astro add`, `astro check`, …) |
+| `npm run dev` | Servidor de desarrollo de Astro + admin de Keystatic en `localhost:4321` |
+| `npm run build` | Genera el sitio en `./dist/` (cliente estático + worker SSR del admin) |
+| `npm run preview` | Sirve localmente la build |
+| `npm run astro ...` | CLI de Astro (`astro add`, `astro check`, …) |
 
 ## Estructura del proyecto
 
 ```text
 /
 ├── public/                     # Assets estáticos servidos tal cual
-│   ├── admin/                  # Build del panel de TinaCMS (generado)
 │   ├── brito-logo.png          # Logo principal
 │   ├── brito-logo-blanco.png   # Logo para fondos oscuros
 │   ├── isotipo.png             # Isotipo (usado en nav y footer)
@@ -73,64 +78,56 @@ npm run dev
 │   └── Manual de identidad-Brito.pdf
 ├── src/
 │   ├── content/
-│   │   └── site.json           # ÚNICA fuente de contenido del sitio
+│   │   └── site/
+│   │       └── index.json      # ÚNICA fuente de contenido del sitio (singleton de Keystatic)
 │   ├── layouts/
 │   │   └── Layout.astro        # Layout base: <head>, nav, footer, scripts
 │   ├── pages/
 │   │   ├── index.astro         # Landing one-page (todas las secciones)
-│   │   ├── admin/index.astro   # Redirección al panel de Tina
 │   │   ├── privacidad/         # Política de privacidad
 │   │   └── terminos/           # Términos de uso
 │   └── styles/
 │       └── global.css          # Sistema de diseño (variables, componentes, animaciones)
-├── tina/
-│   ├── config.ts               # Esquema del CMS (mapea los campos de site.json)
-│   └── __generated__/          # Cliente y tipos generados por Tina (NO editar a mano)
-├── astro.config.mjs
-└── package.json
+├── keystatic.config.ts         # Esquema del CMS (singleton `site` con todas las secciones)
+├── astro.config.mjs            # Integraciones (react, keystatic) + adapter (cloudflare)
+└── wrangler.jsonc              # Config de Cloudflare (nombre, compatibility flags)
 ```
 
-## Gestión de contenido (TinaCMS)
+> Las rutas del admin (`/keystatic` y `/api/keystatic/...`) las inyecta automáticamente la
+> integración `@keystatic/astro`; no existen como archivos en `src/pages`.
 
-Todo el contenido editable vive en un único archivo: **`src/content/site.json`**.
-El esquema que lo expone en el editor visual está definido en **`tina/config.ts`** como una
-colección `site` con secciones:
+## Gestión de contenido (Keystatic)
 
-`meta` (SEO) · `nav` · `hero` · propuesta de valor · `servicios` (7 categorías con planes y precios) ·
-`porque` · `stats` · `portafolio` · `testimonios` · `nosotros` · `faq` · `contacto` · `cta` · `footer`.
+Todo el contenido editable vive en un único archivo: **`src/content/site/index.json`**.
+El esquema que lo expone en el editor está en **`keystatic.config.ts`** como un *singleton* `site`
+con secciones: páginas legales (privacidad, términos), `meta` (SEO), `nav`, `hero`, propuesta de valor,
+`servicios` (7 categorías con planes y precios), `porque`, `stats`, `portafolio`, `testimonios`,
+`nosotros`, `faq`, `contacto`, `cta` y `footer`.
 
-**Cómo editar:**
+**Modos de almacenamiento** (conmutados por entorno en `keystatic.config.ts`):
 
-1. `npm run dev`
-2. Abrir <http://localhost:4321/admin>
-3. Editar los campos desde la interfaz; Tina escribe los cambios en `site.json`.
+| Entorno | Modo | Comportamiento |
+| :--- | :--- | :--- |
+| Desarrollo (`import.meta.env.DEV`) | `local` | Edita y guarda en el sistema de archivos, sin auth |
+| Producción | `github` | Autentica con GitHub App y commitea los cambios al repo `Agencia-Marketing/brito-consulting` |
 
-> La colección está configurada con `create: false` / `delete: false`: solo se permite **editar**
-> el contenido existente, no crear ni borrar documentos.
-
-Los archivos de `tina/__generated__/` se regeneran automáticamente con cada `dev`/`build`; no deben
-editarse manualmente.
+**Editar en local:** `npm run dev` → <http://localhost:4321/keystatic>. Cualquier cambio se escribe en
+`src/content/site/index.json` y se refleja en el sitio.
 
 ## Variables de entorno
 
-Necesarias para conectar con **Tina Cloud** (edición en producción y guardado en el repositorio):
+Solo necesarias para el **modo GitHub** (edición en producción). Ver `.env.example`.
 
-| Variable | Descripción |
+| Variable | Uso |
 | :--- | :--- |
-| `TINA_CLIENT_ID` | Client ID del proyecto en Tina Cloud |
-| `TINA_TOKEN` | Token de lectura/escritura de Tina Cloud |
-| `GITHUB_BRANCH` | Rama de destino (por defecto `main`) |
+| `KEYSTATIC_GITHUB_CLIENT_ID` | Client ID de la GitHub App |
+| `KEYSTATIC_GITHUB_CLIENT_SECRET` | Client secret de la GitHub App |
+| `KEYSTATIC_SECRET` | Secreto aleatorio para firmar la cookie de sesión (`openssl rand -hex 32`) |
+| `PUBLIC_KEYSTATIC_GITHUB_APP_SLUG` | Slug público de la GitHub App |
 
-Crear un archivo `.env` (ignorado por git) en la raíz:
-
-```sh
-TINA_CLIENT_ID=tu_client_id
-TINA_TOKEN=tu_token
-GITHUB_BRANCH=main
-```
-
-> En desarrollo local Tina funciona sin credenciales contra el sistema de archivos. Las variables
-> son necesarias para el editor en producción.
+**GitHub App:** crearla en GitHub con permiso de *Contents: Read & Write* sobre el repo y los callbacks:
+- Producción: `https://<tu-dominio>/api/keystatic/github/oauth/callback`
+- Local (si se prueba el modo GitHub): `http://127.0.0.1:4321/api/keystatic/github/oauth/callback`
 
 ## Diseño y marca
 
@@ -149,22 +146,30 @@ GITHUB_BRANCH=main
 - Sobre las superficies de acento (botones, banda de estadísticas) el texto va en oscuro
   (`#1A1A1C`) para garantizar contraste.
 
-## Despliegue
+## Despliegue (Cloudflare)
 
-El proyecto compila a estático y puede alojarse en cualquier hosting de sitios estáticos
-(Vercel, Netlify, Cloudflare Pages, etc.).
+El adapter `@astrojs/cloudflare` genera salida de **Cloudflare Workers con assets estáticos**
+(`dist/client` = assets, `dist/server` = worker). Cloudflare recomienda Workers sobre Pages para
+proyectos con SSR.
 
 ```sh
-npm run build      # genera ./dist/
-npm run preview    # verificación local de la build
+npm run build
+npx wrangler deploy      # despliega el worker + assets
 ```
 
-Configurar las [variables de entorno](#variables-de-entorno) de Tina en el panel del proveedor.
-Directorio de salida: `dist/`. Comando de build: `npm run build`.
+Requisitos en el proyecto de Cloudflare:
+- **`compatibility_flags: ["nodejs_compat"]`** (ya definido en `wrangler.jsonc`; Keystatic usa APIs de Node).
+- Cargar las 4 variables de entorno de Keystatic como *secrets* (`npx wrangler secret put NOMBRE`).
 
-## Convenciones de contribución
+> Si se prefiere despliegue por Git con Cloudflare, usar la integración de Workers Builds apuntando
+> al comando `npm run build`.
 
-- No editar manualmente `tina/__generated__/` ni `dist/` (generados).
-- El contenido se edita vía el panel de Tina (escribe en `src/content/site.json`).
+## Notas y convenciones
+
+- **React fijado a v18.** El build del adapter de Cloudflare (entorno workerd) es incompatible con
+  React 19 (`module is not defined`); mantener `react`/`react-dom` en `^18`.
+- `astro.config.mjs` excluye `virtual:keystatic-config` del dep-optimizer para que el build del worker
+  resuelva el módulo virtual de Keystatic.
+- El contenido se edita vía el panel de Keystatic (escribe en `src/content/site/index.json`).
 - Los cambios de estilo global se hacen sobre las variables de `src/styles/global.css`.
 - Rama principal: `main`.

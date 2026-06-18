@@ -1,0 +1,7 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "brito-consulting",
+  "compatibility_date": "2026-04-15",
+  // Keystatic (modo GitHub: OAuth + API de GitHub) usa APIs de Node.
+  "compatibility_flags": ["nodejs_compat"]
+}
