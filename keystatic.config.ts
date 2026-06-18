@@ -23,28 +23,6 @@ export default config({
       path: 'src/content/site/',
       format: { data: 'json' },
       schema: {
-        // ── PÁGINA PRIVACIDAD
-        privacidad: fields.object(
-          {
-            tag: text('Etiqueta'),
-            title: text('Título'),
-            title_highlight: text('Título (parte resaltada)'),
-            fecha: text('Fecha de actualización'),
-          },
-          { label: 'Página · Privacidad' },
-        ),
-
-        // ── PÁGINA TÉRMINOS
-        terminos: fields.object(
-          {
-            tag: text('Etiqueta'),
-            title: text('Título'),
-            title_highlight: text('Título (parte resaltada)'),
-            fecha: text('Fecha de actualización'),
-          },
-          { label: 'Página · Términos' },
-        ),
-
         // ── META
         meta: fields.object(
           {
@@ -290,6 +268,28 @@ export default config({
             copyright: text('Copyright'),
           },
           { label: 'Footer' },
+        ),
+
+        // ── PÁGINA PRIVACIDAD (al final: páginas legales)
+        privacidad: fields.object(
+          {
+            tag: text('Etiqueta'),
+            title: text('Título'),
+            title_highlight: text('Título (parte resaltada)'),
+            fecha: text('Fecha de actualización'),
+          },
+          { label: 'Página · Privacidad' },
+        ),
+
+        // ── PÁGINA TÉRMINOS (al final: páginas legales)
+        terminos: fields.object(
+          {
+            tag: text('Etiqueta'),
+            title: text('Título'),
+            title_highlight: text('Título (parte resaltada)'),
+            fecha: text('Fecha de actualización'),
+          },
+          { label: 'Página · Términos' },
         ),
       },
     }),
