@@ -5,6 +5,75 @@ const text = (label: string) => fields.text({ label });
 // Campo de texto largo (antes textarea en Tina)
 const area = (label: string) => fields.text({ label, multiline: true });
 
+// ── Iconos: desplegable (Material Symbols). Incluye todos los usados + extras.
+const iconOptions = [
+  { label: 'Estrella', value: 'star' },
+  { label: 'Cohete', value: 'rocket_launch' },
+  { label: 'Idea / Destello', value: 'auto_awesome' },
+  { label: 'Cerebro / Estrategia', value: 'psychology' },
+  { label: 'Equipo / Grupo', value: 'groups' },
+  { label: 'Verificado', value: 'verified' },
+  { label: 'Me gusta', value: 'thumb_up' },
+  { label: 'Tendencia al alza', value: 'trending_up' },
+  { label: 'Gráfico de barras', value: 'bar_chart' },
+  { label: 'Monitorización', value: 'monitoring' },
+  { label: 'Insights', value: 'insights' },
+  { label: 'Temporizador', value: 'timer' },
+  { label: 'Código', value: 'code' },
+  { label: 'Idioma / Web', value: 'language' },
+  { label: 'Globo / Mundo', value: 'public' },
+  { label: 'Móvil', value: 'smartphone' },
+  { label: 'API / Integración', value: 'api' },
+  { label: 'Empresa (edificio)', value: 'business' },
+  { label: 'Corporativo', value: 'corporate_fare' },
+  { label: 'Tienda', value: 'store' },
+  { label: 'Carrito', value: 'shopping_cart' },
+  { label: 'Compartir', value: 'share' },
+  { label: 'Clic en anuncio', value: 'ads_click' },
+  { label: 'Megáfono / Campaña', value: 'campaign' },
+  { label: 'Buscar', value: 'search' },
+  { label: 'Robot / IA', value: 'smart_toy' },
+  { label: 'Chat', value: 'chat' },
+  { label: 'Ajustes / Automatización', value: 'settings_suggest' },
+  { label: 'Soporte', value: 'support_agent' },
+  { label: 'Email', value: 'mail' },
+  { label: 'Acuerdo', value: 'handshake' },
+  { label: 'Paleta', value: 'palette' },
+  { label: 'Estilo', value: 'style' },
+  { label: 'Lápiz / Dibujo', value: 'draw' },
+  { label: 'Servicios de diseño', value: 'design_services' },
+  { label: 'Editar nota', value: 'edit_note' },
+  { label: 'Marca / Altavoz', value: 'brand_awareness' },
+  { label: 'Cámara de vídeo', value: 'videocam' },
+  { label: 'Película', value: 'movie' },
+  { label: 'TV en vivo', value: 'live_tv' },
+  { label: 'Suscripciones', value: 'subscriptions' },
+  { label: 'Cámara de fotos', value: 'photo_camera' },
+  { label: 'Artículo', value: 'article' },
+  { label: 'Periódico', value: 'newspaper' },
+  { label: 'Libro abierto', value: 'auto_stories' },
+] as const;
+const iconField = (label: string) =>
+  fields.select({ label, options: iconOptions as any, defaultValue: 'star' });
+
+// ── Colores de fondo (fallback del portafolio): desplegable de presets oscuros.
+const colorOptions = [
+  { label: 'Azul noche', value: '#1a1a2e' },
+  { label: 'Azul marino', value: '#16213e' },
+  { label: 'Índigo oscuro', value: '#0d0d1a' },
+  { label: 'Índigo', value: '#1a1a35' },
+  { label: 'Marrón muy oscuro', value: '#1a0a00' },
+  { label: 'Marrón cobre', value: '#2d1000' },
+  { label: 'Verde muy oscuro', value: '#0a1a0a' },
+  { label: 'Verde bosque', value: '#102010' },
+  { label: 'Verde azulado', value: '#0d1a15' },
+  { label: 'Esmeralda oscuro', value: '#102818' },
+  { label: 'Granate oscuro', value: '#1a0d0d' },
+  { label: 'Granate', value: '#2e1515' },
+] as const;
+const colorField = (label: string, def: string) =>
+  fields.select({ label, options: colorOptions as any, defaultValue: def });
+
 export default config({
   storage: import.meta.env.DEV
     ? { kind: 'local' }
@@ -68,7 +137,7 @@ export default config({
             link_text: text('Texto del enlace'),
             features: fields.array(
               fields.object({
-                icon: text('Icono (Material Symbols)'),
+                icon: iconField('Icono'),
                 title: text('Título'),
                 desc: text('Descripción'),
               }),
@@ -90,12 +159,12 @@ export default config({
             tabs: fields.array(
               fields.object({
                 id: text('ID (sin espacios)'),
-                icon: text('Icono'),
+                icon: iconField('Icono'),
                 label: text('Nombre de la pestaña'),
                 planes: fields.array(
                   fields.object({
                     nombre: text('Nombre del plan'),
-                    icon: text('Icono'),
+                    icon: iconField('Icono'),
                     precio: text('Precio'),
                     periodo: text('Período (ej: /mes)'),
                     desc: area('Descripción'),
@@ -128,7 +197,7 @@ export default config({
             founder_role: text('Cargo del fundador'),
             features: fields.array(
               fields.object({
-                icon: text('Icono'),
+                icon: iconField('Icono'),
                 title: text('Título'),
                 desc: text('Descripción'),
               }),
@@ -164,9 +233,9 @@ export default config({
                   directory: 'public/images/portafolio',
                   publicPath: '/images/portafolio',
                 }),
-                color1: text('Color fondo 1 (hex, fallback)'),
-                color2: text('Color fondo 2 (hex, fallback)'),
-                icon: text('Icono (fallback)'),
+                color1: colorField('Color fondo 1 (fallback)', '#1a1a2e'),
+                color2: colorField('Color fondo 2 (fallback)', '#16213e'),
+                icon: iconField('Icono (fallback)'),
               }),
               { label: 'Proyectos', itemLabel: (p) => p.fields.titulo.value },
             ),
