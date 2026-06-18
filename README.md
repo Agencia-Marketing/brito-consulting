@@ -125,9 +125,17 @@ Solo necesarias para el **modo GitHub** (edición en producción). Ver `.env.exa
 | `KEYSTATIC_SECRET` | Secreto aleatorio para firmar la cookie de sesión (`openssl rand -hex 32`) |
 | `PUBLIC_KEYSTATIC_GITHUB_APP_SLUG` | Slug público de la GitHub App |
 
-**GitHub App:** crearla en GitHub con permiso de *Contents: Read & Write* sobre el repo y los callbacks:
-- Producción: `https://<tu-dominio>/api/keystatic/github/oauth/callback`
-- Local (si se prueba el modo GitHub): `http://127.0.0.1:4321/api/keystatic/github/oauth/callback`
+**GitHub App** (ya creada: `brito-consulting-keystatic`). Para recrearla, el camino fácil es el
+asistente de Keystatic: poner `storage` en github fijo temporalmente, `npm run dev`, abrir
+`/keystatic` → **"Create GitHub App"** (GitHub rellena permisos *Contents: R&W* y escribe el `.env`).
+Instalarla en el repo `Agencia-Marketing/brito-consulting`.
+
+Callbacks de la App (admite varios):
+- Producción: `https://brito-consulting.programacionagencia.workers.dev/api/keystatic/github/oauth/callback`
+- Local (si se prueba modo github en dev): `http://127.0.0.1:4321/api/keystatic/github/oauth/callback`
+
+> El asistente solo añade el callback de localhost; el de producción hay que añadirlo a mano en los
+> ajustes de la GitHub App.
 
 ## Diseño y marca
 
@@ -152,22 +160,45 @@ El adapter `@astrojs/cloudflare` genera salida de **Cloudflare Workers con asset
 (`dist/client` = assets, `dist/server` = worker). Cloudflare recomienda Workers sobre Pages para
 proyectos con SSR.
 
+- **Producción:** <https://brito-consulting.programacionagencia.workers.dev>
+- **Cuenta:** programacionagencia@gmail.com · **Worker:** `brito-consulting`
+
+**Deploy:**
 ```sh
 npm run build
-npx wrangler deploy      # despliega el worker + assets
+# El adapter escribe la config del worker en dist/server/wrangler.json:
+npx wrangler deploy -c dist/server/wrangler.json
 ```
 
-Requisitos en el proyecto de Cloudflare:
-- **`compatibility_flags: ["nodejs_compat"]`** (ya definido en `wrangler.jsonc`; Keystatic usa APIs de Node).
-- Cargar las 4 variables de entorno de Keystatic como *secrets* (`npx wrangler secret put NOMBRE`).
+Autenticación de wrangler: `wrangler login` (navegador) o un API token
+(`export CLOUDFLARE_API_TOKEN=...`, permiso *Workers Scripts: Edit*).
 
-> Si se prefiere despliegue por Git con Cloudflare, usar la integración de Workers Builds apuntando
-> al comando `npm run build`.
+**Secrets del worker** (las 4 vars de Keystatic, modo GitHub). Cargarlas en la cuenta correcta:
+```sh
+printf "%s" "VALOR" | npx wrangler secret put KEYSTATIC_GITHUB_CLIENT_ID
+# ...repetir para CLIENT_SECRET, KEYSTATIC_SECRET, PUBLIC_KEYSTATIC_GITHUB_APP_SLUG
+```
+> ⚠️ Cargar los secrets desde **bash/`printf`**, NO pipeando con PowerShell: PowerShell 5.1 antepone
+> un BOM (`﻿`) al valor y corrompe el secret (p. ej. el `client_id` en la URL de OAuth).
+
+Requisitos del proyecto: **`compatibility_flags: ["nodejs_compat"]`** (en `wrangler.jsonc`; Keystatic
+usa APIs de Node y Cloudflare puebla `process.env` desde los secrets). El KV `SESSION` se
+auto-aprovisiona en el primer deploy.
 
 ## Notas y convenciones
 
 - **React fijado a v18.** El build del adapter de Cloudflare (entorno workerd) es incompatible con
   React 19 (`module is not defined`); mantener `react`/`react-dom` en `^18`.
+- **Adapter solo en build.** `astro.config.mjs` aplica `@astrojs/cloudflare` únicamente cuando el
+  comando es `build` (`process.argv.includes('build')`). En `dev` el SSR corre en Node — el dev en
+  workerd rompe con dependencias CJS (React/Keystatic).
+- **Patch de Keystatic** (`patches/@keystatic+astro+5.1.0.patch`, reaplicado por `postinstall:
+  patch-package`). `@keystatic/astro` 5.1.0 lee los secrets vía `Astro.locals.runtime.env`, que
+  Astro 6 + adapter 13 eliminan (→ 500 en las rutas OAuth). El patch cae a `process.env`. **No
+  quitar el patch ni el `postinstall`.**
+- **Path del singleton con `/` final** (`path: 'src/content/site/'` en `keystatic.config.ts`): obliga
+  a Keystatic a leer `src/content/site/index.json`. Sin la barra buscaría `src/content/site.json` y el
+  admin saldría vacío.
 - `astro.config.mjs` excluye `virtual:keystatic-config` del dep-optimizer para que el build del worker
   resuelva el módulo virtual de Keystatic.
 - El contenido se edita vía el panel de Keystatic (escribe en `src/content/site/index.json`).
