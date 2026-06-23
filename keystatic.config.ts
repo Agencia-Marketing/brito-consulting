@@ -1,3 +1,4 @@
+import { createElement } from 'react';
 import { config, fields, singleton } from '@keystatic/core';
 
 // Campo de texto corto reutilizable
@@ -82,7 +83,17 @@ export default config({
         repo: { owner: 'Agencia-Marketing', name: 'brito-consulting' },
       },
   ui: {
-    brand: { name: 'Brito Consulting' },
+    brand: {
+      name: 'Brito Consulting',
+      mark: () =>
+        createElement('img', {
+          src: '/isotipo.png',
+          alt: 'Brito Consulting',
+          style: { height: 24, width: 'auto' },
+        }),
+    },
+    // Lista plana (sin cabecera "SINGLETONS"): va directo a "Contenido del sitio".
+    navigation: ['site'],
   },
   singletons: {
     site: singleton({
