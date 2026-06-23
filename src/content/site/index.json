@@ -1,16 +1,4 @@
 {
-  "privacidad": {
-    "tag": "Legal",
-    "title": "Política de",
-    "title_highlight": "Privacidad",
-    "fecha": "1 de enero de 2025"
-  },
-  "terminos": {
-    "tag": "Legal",
-    "title": "Términos",
-    "title_highlight": "de Uso",
-    "fecha": "1 de enero de 2025"
-  },
   "meta": {
     "title": "Brito Consulting — Agencia de Marketing y Consulta de Negocios",
     "description": "Agencia de marketing y consulta de negocios. Desarrollo web, redes sociales, diseño gráfico, videomarketing, publicidad y agentes IA para hacer crecer tu negocio."
@@ -1360,7 +1348,6 @@
     "subtitulo": "Primera consulta siempre gratuita",
     "telefono": "+34 639 494 000",
     "email": "hola@britoconsulting.com",
-    "ubicacion": "Madrid, España",
     "horario": "Lun–Vie, 9:00–18:00",
     "badge_title": "Respuesta en 24h",
     "badge_desc": "Respondemos a todos los mensajes en menos de 24 horas laborables, garantizado.",
@@ -1386,5 +1373,17 @@
   "footer": {
     "tagline": "Agencia de marketing digital especializada en resultados. Transformamos ideas en crecimiento real.",
     "copyright": "© 2025 Brito Consulting. Todos los derechos reservados."
+  },
+  "privacidad": {
+    "tag": "Legal",
+    "title": "Política de",
+    "title_highlight": "Privacidad",
+    "fecha": "1 de enero de 2025"
+  },
+  "terminos": {
+    "tag": "Legal",
+    "title": "Términos",
+    "title_highlight": "de Uso",
+    "fecha": "1 de enero de 2025"
   }
 }
