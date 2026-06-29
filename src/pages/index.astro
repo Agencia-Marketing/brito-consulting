@@ -324,6 +324,7 @@ const s = site;
       <div class="reveal">
         {[
           { icon:'phone',       label:'Teléfono',  value:s.contacto.telefono },
+          { icon:'chat',        label:'WhatsApp',  value:s.contacto.whatsapp, href:`https://wa.me/${s.contacto.whatsapp_link}` },
           { icon:'mail',        label:'Email',     value:s.contacto.email },
           { icon:'location_on', label:'Ubicación', value:s.contacto.ubicacion },
           { icon:'schedule',    label:'Horario',   value:s.contacto.horario },
@@ -332,7 +333,9 @@ const s = site;
             <div class="contact-icon"><span class="material-symbols-outlined">{item.icon}</span></div>
             <div>
               <div style="font-size:.75rem;color:var(--gray-500);font-weight:600;text-transform:uppercase;letter-spacing:.08em">{item.label}</div>
-              <div style="font-weight:700;margin-top:.2rem">{item.value}</div>
+              {item.href
+                ? <a href={item.href} target="_blank" rel="noopener" style="font-weight:700;margin-top:.2rem;display:inline-block">{item.value}</a>
+                : <div style="font-weight:700;margin-top:.2rem">{item.value}</div>}
             </div>
           </div>
         ))}

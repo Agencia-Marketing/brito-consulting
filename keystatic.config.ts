@@ -327,6 +327,8 @@ export default config({
             title_highlight: text('Título (parte resaltada)'),
             subtitulo: text('Subtítulo'),
             telefono: text('Teléfono'),
+            whatsapp: text('WhatsApp (mostrar)'),
+            whatsapp_link: text('WhatsApp (solo números, formato internacional sin +)'),
             email: text('Email'),
             ubicacion: text('Ubicación'),
             horario: text('Horario'),
