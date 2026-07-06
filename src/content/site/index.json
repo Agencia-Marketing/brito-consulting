@@ -84,6 +84,12 @@
                 "text": "Reporte mensual de crecimiento",
                 "included": true
               }
+            ],
+            "compras": [
+              {
+                "etiqueta": "Pago único",
+                "importe_usd": 200
+              }
             ]
           },
           {
@@ -113,6 +119,12 @@
               {
                 "text": "Reporte mensual de crecimiento",
                 "included": true
+              }
+            ],
+            "compras": [
+              {
+                "etiqueta": "Pago único",
+                "importe_usd": 220
               }
             ]
           },
@@ -144,6 +156,12 @@
                 "text": "Reporte mensual de crecimiento",
                 "included": true
               }
+            ],
+            "compras": [
+              {
+                "etiqueta": "Pago único",
+                "importe_usd": 250
+              }
             ]
           },
           {
@@ -174,6 +192,12 @@
                 "text": "Reporte mensual de crecimiento",
                 "included": true
               }
+            ],
+            "compras": [
+              {
+                "etiqueta": "Pago único",
+                "importe_usd": 280
+              }
             ]
           },
           {
@@ -203,6 +227,12 @@
               {
                 "text": "Reporte mensual de crecimiento",
                 "included": true
+              }
+            ],
+            "compras": [
+              {
+                "etiqueta": "Pago único",
+                "importe_usd": 310
               }
             ]
           }
@@ -241,6 +271,12 @@
                 "text": "$20 USD en ads incluidos",
                 "included": true
               }
+            ],
+            "compras": [
+              {
+                "etiqueta": "Pago único",
+                "importe_usd": 250
+              }
             ]
           },
           {
@@ -270,6 +306,12 @@
               {
                 "text": "$20 USD en ads incluidos",
                 "included": true
+              }
+            ],
+            "compras": [
+              {
+                "etiqueta": "Pago único",
+                "importe_usd": 250
               }
             ]
           }
@@ -308,6 +350,12 @@
                 "text": "Parrilla / publicación en redes",
                 "included": false
               }
+            ],
+            "compras": [
+              {
+                "etiqueta": "Pago único",
+                "importe_usd": 12
+              }
             ]
           },
           {
@@ -337,6 +385,12 @@
               {
                 "text": "1 marca / línea gráfica",
                 "included": true
+              }
+            ],
+            "compras": [
+              {
+                "etiqueta": "Pago único",
+                "importe_usd": 100
               }
             ]
           },
@@ -368,6 +422,12 @@
                 "text": "1 marca / línea gráfica",
                 "included": true
               }
+            ],
+            "compras": [
+              {
+                "etiqueta": "Pago único",
+                "importe_usd": 150
+              }
             ]
           },
           {
@@ -397,6 +457,12 @@
               {
                 "text": "1 marca / línea gráfica",
                 "included": true
+              }
+            ],
+            "compras": [
+              {
+                "etiqueta": "Pago único",
+                "importe_usd": 160
               }
             ]
           },
@@ -428,6 +494,12 @@
                 "text": "Tipografías de marca",
                 "included": true
               }
+            ],
+            "compras": [
+              {
+                "etiqueta": "Pago único",
+                "importe_usd": 250
+              }
             ]
           },
           {
@@ -457,6 +529,32 @@
               {
                 "text": "Rótulos / ilustración — desde $150",
                 "included": true
+              }
+            ],
+            "compras": [
+              {
+                "etiqueta": "Post / catálogo",
+                "importe_usd": 20
+              },
+              {
+                "etiqueta": "Cartel / infografía",
+                "importe_usd": 30
+              },
+              {
+                "etiqueta": "Flyer / tarjeta / display",
+                "importe_usd": 50
+              },
+              {
+                "etiqueta": "Menú Pyme",
+                "importe_usd": 70
+              },
+              {
+                "etiqueta": "Tríptico",
+                "importe_usd": 85
+              },
+              {
+                "etiqueta": "Rótulos / ilustración",
+                "importe_usd": 150
               }
             ]
           }
@@ -495,6 +593,16 @@
                 "text": "Entrega en 5–7 días (Económico)",
                 "included": true
               }
+            ],
+            "compras": [
+              {
+                "etiqueta": "Económico",
+                "importe_usd": 500
+              },
+              {
+                "etiqueta": "A la medida",
+                "importe_usd": 700
+              }
             ]
           },
           {
@@ -524,6 +632,16 @@
               {
                 "text": "Entrega en 8–12 días (Económico)",
                 "included": true
+              }
+            ],
+            "compras": [
+              {
+                "etiqueta": "Económico",
+                "importe_usd": 700
+              },
+              {
+                "etiqueta": "A la medida",
+                "importe_usd": 850
               }
             ]
           },
@@ -555,6 +673,16 @@
                 "text": "Pasarela de pago",
                 "included": false
               }
+            ],
+            "compras": [
+              {
+                "etiqueta": "Económico",
+                "importe_usd": 800
+              },
+              {
+                "etiqueta": "A la medida",
+                "importe_usd": 1000
+              }
             ]
           },
           {
@@ -584,6 +712,16 @@
               {
                 "text": "Extras: multimoneda, reservas, blog…",
                 "included": true
+              }
+            ],
+            "compras": [
+              {
+                "etiqueta": "Económico",
+                "importe_usd": 1000
+              },
+              {
+                "etiqueta": "A la medida",
+                "importe_usd": 1200
               }
             ]
           }
@@ -622,6 +760,20 @@
                 "text": "Mockups y animaciones",
                 "included": false
               }
+            ],
+            "compras": [
+              {
+                "etiqueta": "Menos de 30 s",
+                "importe_usd": 40
+              },
+              {
+                "etiqueta": "30 segundos",
+                "importe_usd": 70
+              },
+              {
+                "etiqueta": "60 segundos",
+                "importe_usd": 100
+              }
             ]
           },
           {
@@ -651,6 +803,20 @@
               {
                 "text": "Animaciones avanzadas",
                 "included": false
+              }
+            ],
+            "compras": [
+              {
+                "etiqueta": "Menos de 30 s",
+                "importe_usd": 75
+              },
+              {
+                "etiqueta": "30 segundos",
+                "importe_usd": 130
+              },
+              {
+                "etiqueta": "60 segundos",
+                "importe_usd": 200
               }
             ]
           },
@@ -682,6 +848,20 @@
                 "text": "Voz en off (se contrata aparte)",
                 "included": false
               }
+            ],
+            "compras": [
+              {
+                "etiqueta": "Menos de 30 s",
+                "importe_usd": 100
+              },
+              {
+                "etiqueta": "30 segundos",
+                "importe_usd": 270
+              },
+              {
+                "etiqueta": "60 segundos",
+                "importe_usd": 500
+              }
             ]
           },
           {
@@ -712,6 +892,20 @@
                 "text": "Formatos: Reels, TikTok, Shorts…",
                 "included": true
               }
+            ],
+            "compras": [
+              {
+                "etiqueta": "Básico · 4 vídeos",
+                "importe_usd": 200
+              },
+              {
+                "etiqueta": "Inter · 4 vídeos",
+                "importe_usd": 400
+              },
+              {
+                "etiqueta": "Completo · 4 vídeos",
+                "importe_usd": 800
+              }
             ]
           },
           {
@@ -741,6 +935,12 @@
               {
                 "text": "Monitoreo de campaña 30 días",
                 "included": true
+              }
+            ],
+            "compras": [
+              {
+                "etiqueta": "Pago único",
+                "importe_usd": 250
               }
             ]
           }
@@ -779,6 +979,12 @@
                 "text": "Inversión publicitaria incluida",
                 "included": false
               }
+            ],
+            "compras": [
+              {
+                "etiqueta": "Pago único",
+                "importe_usd": 85
+              }
             ]
           },
           {
@@ -809,6 +1015,12 @@
                 "text": "Inversión publicitaria incluida",
                 "included": false
               }
+            ],
+            "compras": [
+              {
+                "etiqueta": "Pago único",
+                "importe_usd": 135
+              }
             ]
           },
           {
@@ -838,6 +1050,12 @@
               {
                 "text": "Inversión publicitaria incluida",
                 "included": false
+              }
+            ],
+            "compras": [
+              {
+                "etiqueta": "Pago único",
+                "importe_usd": 220
               }
             ]
           }
@@ -876,6 +1094,12 @@
                 "text": "Inversión publicitaria incluida",
                 "included": false
               }
+            ],
+            "compras": [
+              {
+                "etiqueta": "Pago único",
+                "importe_usd": 50
+              }
             ]
           },
           {
@@ -906,6 +1130,12 @@
                 "text": "Inversión publicitaria incluida",
                 "included": false
               }
+            ],
+            "compras": [
+              {
+                "etiqueta": "Pago único",
+                "importe_usd": 50
+              }
             ]
           },
           {
@@ -935,6 +1165,12 @@
               {
                 "text": "Inversión publicitaria incluida",
                 "included": false
+              }
+            ],
+            "compras": [
+              {
+                "etiqueta": "Pago único",
+                "importe_usd": 50
               }
             ]
           }
@@ -973,6 +1209,12 @@
                 "text": "Requiere cuenta High Lead / GHL",
                 "included": true
               }
+            ],
+            "compras": [
+              {
+                "etiqueta": "Pago único",
+                "importe_usd": 500
+              }
             ]
           },
           {
@@ -1003,6 +1245,12 @@
                 "text": "Pago de plataforma aparte",
                 "included": false
               }
+            ],
+            "compras": [
+              {
+                "etiqueta": "Pago único",
+                "importe_usd": 200
+              }
             ]
           },
           {
@@ -1032,6 +1280,12 @@
               {
                 "text": "Especialista y lanzamiento de campaña",
                 "included": true
+              }
+            ],
+            "compras": [
+              {
+                "etiqueta": "Pago único",
+                "importe_usd": 300
               }
             ]
           }

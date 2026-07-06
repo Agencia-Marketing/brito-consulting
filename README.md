@@ -124,6 +124,25 @@ Solo necesarias para el **modo GitHub** (edición en producción). Ver `.env.exa
 | `KEYSTATIC_GITHUB_CLIENT_SECRET` | Client secret de la GitHub App |
 | `KEYSTATIC_SECRET` | Secreto aleatorio para firmar la cookie de sesión (`openssl rand -hex 32`) |
 | `PUBLIC_KEYSTATIC_GITHUB_APP_SLUG` | Slug público de la GitHub App |
+| `STRIPE_SECRET_KEY` | Clave secreta de Stripe para el cobro online (`sk_live_...` / `sk_test_...`) |
+
+### Cobro online (Stripe Checkout)
+
+Los botones **Comprar** de cada plan crean una sesión de Stripe Checkout en el endpoint
+[`src/pages/api/checkout.ts`](src/pages/api/checkout.ts) (pago único, `mode: 'payment'`). El importe
+sale del propio contenido (`compras[].importe_usd` en `index.json`), **nunca del navegador**, y Stripe
+genera el producto/precio al vuelo (`price_data`) — **no hay que crear productos en el dashboard**. El
+cliente solo edita etiqueta e importe en Keystatic (ver `GUIA-EDICION.md`).
+
+Configurar la clave secreta (una vez):
+
+```bash
+# Producción (Cloudflare) — desde bash, NO PowerShell (ver aviso de secrets abajo)
+printf "%s" "sk_live_..." | npx wrangler secret put STRIPE_SECRET_KEY
+```
+
+En local, poner `STRIPE_SECRET_KEY=sk_test_...` en `.env`. Prueba end-to-end con la tarjeta de test
+`4242 4242 4242 4242`. Página de éxito: [`/gracias`](src/pages/gracias/index.astro).
 
 **GitHub App** (ya creada: `brito-consulting-keystatic`). Para recrearla, el camino fácil es el
 asistente de Keystatic: poner `storage` en github fijo temporalmente, `npm run dev`, abrir

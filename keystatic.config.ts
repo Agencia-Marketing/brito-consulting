@@ -187,6 +187,22 @@ export default config({
                       }),
                       { label: 'Características', itemLabel: (p) => p.fields.text.value },
                     ),
+                    // Opciones de compra (Stripe). Vacío = botón "Solicitar" → #contacto.
+                    // El importe se cobra vía Stripe Checkout (pago único); no hace falta
+                    // crear productos en Stripe, se generan al vuelo con este importe.
+                    compras: fields.array(
+                      fields.object({
+                        etiqueta: text('Etiqueta (ej: 30 segundos, Pago único)'),
+                        importe_usd: fields.integer({
+                          label: 'Importe a cobrar (USD, sin símbolo)',
+                          validation: { min: 1 },
+                        }),
+                      }),
+                      {
+                        label: 'Opciones de compra (Stripe)',
+                        itemLabel: (p) => p.fields.etiqueta.value,
+                      },
+                    ),
                   }),
                   { label: 'Planes', itemLabel: (p) => p.fields.nombre.value },
                 ),

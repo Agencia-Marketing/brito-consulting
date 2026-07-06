@@ -24,6 +24,24 @@ No necesitas saber nada técnico. Sigue estos pasos.
 - Si subes una imagen, sustituye al color/iniciales de fondo.
 - Si lo dejas vacío, se usa el fondo de color o las iniciales.
 
+## 4. Cobrar planes online (Stripe)
+
+Cada plan de la sección **Servicios** tiene un apartado **"Opciones de compra (Stripe)"**.
+Ahí decides qué se cobra y por cuánto — **no hace falta crear nada en Stripe**:
+
+- **Etiqueta:** el texto del botón (ej: `Pago único`, `30 segundos`, `A la medida`).
+- **Importe a cobrar (USD):** el precio en dólares, **solo el número** (ej: `250`).
+
+Reglas:
+- **1 opción** → el plan muestra un botón **"Comprar"**.
+- **Varias opciones** → aparece un botón por cada una (útil para vídeos por duración, piezas sueltas…).
+- **Sin opciones** (lista vacía) → el botón vuelve a ser **"Solicitar"** y lleva al formulario de contacto.
+
+Al pulsar Comprar, el cliente paga en la pasarela segura de Stripe y vuelve a una página de *gracias*.
+El recibo lo envía Stripe automáticamente; la entrega del servicio la gestionas tú.
+
+> La **clave secreta de Stripe** la configura una sola vez el desarrollador (no se toca desde aquí).
+
 ---
 
 ## ⚠️ Cosas que puedes IGNORAR

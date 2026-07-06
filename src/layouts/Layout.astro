@@ -263,6 +263,32 @@ const { title = site.meta.title, description = site.meta.description } = Astro.p
       }
     }
     (window as any).handleForm = handleForm;
+
+    // Compra — inicia Stripe Checkout para el plan/variante pulsado
+    async function buy(btn:HTMLButtonElement){
+      const original = btn.innerHTML;
+      btn.textContent='Redirigiendo...'; btn.disabled=true;
+      try {
+        const res = await fetch('/api/checkout', {
+          method:'POST',
+          headers:{ 'Content-Type':'application/json' },
+          body: JSON.stringify({
+            tab: Number(btn.dataset.tab),
+            plan: Number(btn.dataset.plan),
+            compra: Number(btn.dataset.compra),
+          }),
+        });
+        const j = await res.json().catch(()=>({}));
+        if(!res.ok || !(j as any).url){
+          throw new Error((j as any).error || 'No se pudo iniciar el pago.');
+        }
+        window.location.href = (j as any).url;
+      } catch(err:any){
+        alert(err?.message || 'No se pudo iniciar el pago. Inténtalo de nuevo.');
+        btn.innerHTML=original; btn.disabled=false;
+      }
+    }
+    (window as any).buy = buy;
   </script>
 </body>
 </html>

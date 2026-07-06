@@ -1,0 +1,25 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import site from '../../content/site/index.json';
+const email = site.contacto.email;
+---
+<Layout title="¡Gracias por tu compra! — Brito Consulting">
+<main style="padding-top:9rem;padding-bottom:7rem;max-width:40rem;margin:0 auto;padding-left:1.5rem;padding-right:1.5rem;text-align:center">
+  <div style="font-size:3.5rem;line-height:1;margin-bottom:1.25rem" aria-hidden="true">
+    <span class="material-symbols-outlined" style="font-size:4rem;color:var(--orange)">check_circle</span>
+  </div>
+  <span class="label-tag tag-orange" style="margin-bottom:1rem">Pago recibido</span>
+  <h1 class="headline-lg" style="margin-top:1rem">¡Gracias por tu <span class="highlight-text">compra</span>!</h1>
+  <p style="color:var(--gray-400);line-height:1.8;margin:1.25rem auto 0;font-size:.975rem;max-width:32rem">
+    Hemos recibido tu pago correctamente. En breve recibirás un recibo de Stripe en tu correo y nuestro
+    equipo se pondrá en contacto contigo para arrancar con el servicio.
+  </p>
+  <p style="color:var(--gray-500);line-height:1.8;margin:1rem auto 0;font-size:.9rem;max-width:32rem">
+    ¿Alguna duda? Escríbenos a <strong>{email}</strong>.
+  </p>
+  <div style="margin-top:2.5rem;display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap">
+    <a href="/" class="btn btn-orange">← Volver al inicio</a>
+    <a href="/#servicios" class="btn btn-outline">Ver más servicios</a>
+  </div>
+</main>
+</Layout>

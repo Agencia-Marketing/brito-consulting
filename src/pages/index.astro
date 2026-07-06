@@ -102,7 +102,7 @@ const s = site;
     {s.servicios.tabs.map((tab, ti) => (
       <div class={`tab-panel${ti===0?' active':''}`} id={`tab-${tab.id}`}>
         <div class="plans-grid">
-          {tab.planes.map(plan => (
+          {tab.planes.map((plan, pi) => (
             <div class={`plan-card${plan.popular?' featured':''}`}>
               {plan.popular && <div class="plan-badge">⚡ Más popular</div>}
               <div class="plan-icon"><span class="material-symbols-outlined">{plan.icon}</span></div>
@@ -120,9 +120,27 @@ const s = site;
                   </div>
                 ))}
               </div>
-              <a href="#contacto" class={`plan-cta${plan.popular?' plan-cta-main':' plan-cta-ghost'}`}>
-                {plan.nombre==='Enterprise'?'Contactar':'Solicitar'}
-              </a>
+              {plan.compras && plan.compras.length > 0 ? (
+                plan.compras.length === 1 ? (
+                  <button type="button" data-tab={ti} data-plan={pi} data-compra={0}
+                    class={`plan-cta${plan.popular?' plan-cta-main':' plan-cta-ghost'}`} onclick="buy(this)">
+                    Comprar
+                  </button>
+                ) : (
+                  <div style="display:flex;flex-direction:column;gap:.5rem">
+                    {plan.compras.map((c, ci) => (
+                      <button type="button" data-tab={ti} data-plan={pi} data-compra={ci}
+                        class="plan-cta plan-cta-ghost" onclick="buy(this)">
+                        {c.etiqueta} · ${c.importe_usd}
+                      </button>
+                    ))}
+                  </div>
+                )
+              ) : (
+                <a href="#contacto" class={`plan-cta${plan.popular?' plan-cta-main':' plan-cta-ghost'}`}>
+                  Solicitar
+                </a>
+              )}
             </div>
           ))}
         </div>
