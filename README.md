@@ -116,7 +116,7 @@ con secciones: páginas legales (privacidad, términos), `meta` (SEO), `nav`, `h
 
 ## Variables de entorno
 
-Solo necesarias para el **modo GitHub** (edición en producción). Ver `.env.example`.
+Necesarias para el **modo GitHub**, cobros y formulario de contacto en producción. Ver `.env.example`.
 
 | Variable | Uso |
 | :--- | :--- |
@@ -125,6 +125,21 @@ Solo necesarias para el **modo GitHub** (edición en producción). Ver `.env.exa
 | `KEYSTATIC_SECRET` | Secreto aleatorio para firmar la cookie de sesión (`openssl rand -hex 32`) |
 | `PUBLIC_KEYSTATIC_GITHUB_APP_SLUG` | Slug público de la GitHub App |
 | `STRIPE_SECRET_KEY` | Clave secreta de Stripe para el cobro online (`sk_live_...` / `sk_test_...`) |
+| `CONTACT_TO_EMAIL` | Email que recibe los leads del formulario |
+| `CONTACT_FROM_EMAIL` | Remitente verificado en Cloudflare Email Service, por ejemplo `noreply@tudominio.com` |
+
+### Formulario de contacto
+
+El formulario envia los datos al endpoint [`src/pages/api/contact.ts`](src/pages/api/contact.ts).
+En desarrollo local, si no existe el binding `EMAIL`, la API registra el lead en consola y responde OK
+para poder probar la interfaz. En producción necesita Cloudflare Email Sending:
+
+1. Verificar/onboardear un dominio remitente en Cloudflare Email Service.
+2. Configurar `CONTACT_FROM_EMAIL` con una cuenta de ese dominio, por ejemplo `noreply@tudominio.com`.
+3. Confirmar `CONTACT_TO_EMAIL` con el email destino de los leads.
+
+Si el binding existe pero falta `CONTACT_FROM_EMAIL` o `CONTACT_TO_EMAIL`, la API devuelve error en vez
+de mostrar un falso "mensaje enviado".
 
 ### Cobro online (Stripe Checkout)
 

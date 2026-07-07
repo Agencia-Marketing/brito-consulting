@@ -7,9 +7,8 @@
   // Formulario de contacto → Cloudflare Email Sending.
   "send_email": [{ "name": "EMAIL" }],
   "vars": {
-    "CONTACT_TO_EMAIL": "programacionagencia@gmail.com",
-    // Rellenar con un remitente de un dominio onboarded en Email Sending
-    // (p.ej. "noreply@tudominio.com"). Vacío = el form no envía (modo dev).
-    "CONTACT_FROM_EMAIL": ""
+    "CONTACT_TO_EMAIL": "britoconsultinglv@gmail.com",
+    // Remitente tecnico: debe estar verificado/onboarded en Cloudflare Email Sending.
+    "CONTACT_FROM_EMAIL": "noreply@britoconsulting.services"
   }
 }
