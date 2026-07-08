@@ -20,6 +20,8 @@ const { title = site.meta.title, description = site.meta.description } = Astro.p
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+  <!-- Cloudflare Turnstile (anti-bot del formulario de contacto) -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
 
@@ -240,11 +242,17 @@ const { title = site.meta.title, description = site.meta.description } = Astro.p
       const success = document.getElementById('formSuccess')!;
       const errorBox = document.getElementById('formError')!;
       errorBox.style.display='none';
+      const data = Object.fromEntries(new FormData(form).entries());
+      // Turnstile inyecta este campo oculto al validar; sin él, no enviamos.
+      if(!data['cf-turnstile-response']){
+        errorBox.textContent='Confirma que no eres un robot.';
+        errorBox.style.display='block';
+        return;
+      }
       const original = btn.innerHTML;
       btn.textContent='Enviando...'; btn.disabled=true;
       try {
-        const data = Object.fromEntries(new FormData(form).entries());
-        const res = await fetch('/api/contact', {
+        const res = await fetch('/api/contacto', {
           method:'POST',
           headers:{ 'Content-Type':'application/json' },
           body: JSON.stringify(data),
@@ -256,10 +264,12 @@ const { title = site.meta.title, description = site.meta.description } = Astro.p
         success.style.display='block';
         btn.style.display='none';
         form.reset();
+        (window as any).turnstile?.reset();
       } catch(err:any){
         errorBox.textContent = err?.message || 'Error al enviar. Inténtalo de nuevo o escríbenos por email.';
         errorBox.style.display='block';
         btn.innerHTML=original; btn.disabled=false;
+        (window as any).turnstile?.reset();
       }
     }
     (window as any).handleForm = handleForm;
