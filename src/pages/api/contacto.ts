@@ -3,9 +3,8 @@ import type { APIRoute } from 'astro';
 export const prerender = false;
 
 // ─── Configuración ──────────────────────────────────────────────────────────
-// Destinatario de los leads. PLACEHOLDER: cambiar por el correo real que debe
-// recibir los mensajes del formulario.
-const DESTINATARIO = 'programacionagencia2@gmail.com';
+// Destinatarios de los leads. Resend acepta varios en un array.
+const DESTINATARIO = ['programacionagencia2@gmail.com', 'britoconsultinglv@gmail.com'];
 
 // Remitente: nombre visible del sitio; dominio verificado en Resend
 // (notify.programacionconecta.com, compartido entre sitios de la agencia).
