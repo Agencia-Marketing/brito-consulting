@@ -6,12 +6,8 @@
   "compatibility_flags": ["nodejs_compat"],
   // Dominio de produccion. Declarado aqui para que el deploy no lo desconecte
   // al sobrescribir la config remota con la local.
-  "routes": [{ "pattern": "britoconsulting.services", "custom_domain": true }],
-  // Formulario de contacto → Cloudflare Email Sending.
-  "send_email": [{ "name": "EMAIL" }],
-  "vars": {
-    "CONTACT_TO_EMAIL": "britoconsultinglv@gmail.com",
-    // Remitente tecnico: debe estar verificado/onboarded en Cloudflare Email Sending.
-    "CONTACT_FROM_EMAIL": "noreply@britoconsulting.services"
-  }
+  "routes": [{ "pattern": "britoconsulting.services", "custom_domain": true }]
+  // El envio de correo ahora es via Resend (API HTTP en api/contacto.ts), no via
+  // el binding Email de Cloudflare. Destinatario y remitente viven en ese archivo;
+  // las claves como secrets del Worker (RESEND_API_KEY, TURNSTILE_SECRET_KEY).
 }
