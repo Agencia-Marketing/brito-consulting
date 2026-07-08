@@ -7,8 +7,9 @@ export const prerender = false;
 // recibir los mensajes del formulario.
 const DESTINATARIO = 'programacionagencia2@gmail.com';
 
-// Remitente verificado en Resend (dominio notify.programacionconecta.com).
-const REMITENTE = 'Programación Conecta <notificaciones@notify.programacionconecta.com>';
+// Remitente: nombre visible del sitio; dominio verificado en Resend
+// (notify.programacionconecta.com, compartido entre sitios de la agencia).
+const REMITENTE = 'Brito Consulting <notificaciones@notify.programacionconecta.com>';
 
 // Límites de longitud para evitar payloads abusivos.
 const LIMITES = { nombre: 120, email: 190, empresa: 160, servicio: 120, mensaje: 5000 };
