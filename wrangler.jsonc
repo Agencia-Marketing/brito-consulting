@@ -4,6 +4,9 @@
   "compatibility_date": "2026-04-15",
   // Keystatic (modo GitHub: OAuth + API de GitHub) usa APIs de Node.
   "compatibility_flags": ["nodejs_compat"],
+  // Dominio de produccion. Declarado aqui para que el deploy no lo desconecte
+  // al sobrescribir la config remota con la local.
+  "routes": [{ "pattern": "britoconsulting.services", "custom_domain": true }],
   // Formulario de contacto → Cloudflare Email Sending.
   "send_email": [{ "name": "EMAIL" }],
   "vars": {
